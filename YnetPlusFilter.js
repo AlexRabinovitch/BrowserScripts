@@ -23,7 +23,8 @@
                                  "li[data-vr-contentbox]", //4
                                  "li.pphp_main_first", //5
                                  "li.MultiImagesLeft_main_first", //6
-                                 "div.pphp_li_items" //7
+                                 "div.pphp_li_items", //7
+                                 "li.multiimagesnews_main_first" //8
                                 ];
         var indicatorsSelectors = ["span.paywall_art_indicator", //0
                                    "img.paywall_img_indicator", //1
@@ -32,7 +33,8 @@
                                    "img[src='/images/premium/xsmall_paywall_icon_45x14.png']", //4
                                    "a.pplus_pay_54x20", //5
                                    "a.ynet_pay_54x20", //6
-                                   "img[src='/images/premium/small_paywall_icon_54x20.png']" //7
+                                   "img[src='/images/premium/small_paywall_icon_54x20.png']", //7
+                                   "img[src='/images/premium/small_paywall_icon_54x20.png']" //8
                                   ];
 
         var i;
