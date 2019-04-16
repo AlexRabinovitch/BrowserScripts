@@ -30,6 +30,7 @@
         selectors.push({articleSelector:"li.multiimagesnews_main_first", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
         selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
         selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
+        selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
         selectors.push({articleSelector:"div.rpphp_main_header", indicatorSelector:"img[src*='/yplus.png']"});
 
         var i;
