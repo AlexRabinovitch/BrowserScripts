@@ -26,6 +26,7 @@
         selectors.push({articleSelector:"li[data-vr-contentbox]", indicatorSelector:"img[src='/images/premium/xsmall_paywall_icon_45x14.png']"});
         selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"a.pplus_pay_54x20"});
         selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"span.ynet_pay_58x20.article"});
+        selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
         selectors.push({articleSelector:"li.MultiImagesLeft_main_first", indicatorSelector:"a.ynet_pay_54x20"});
         selectors.push({articleSelector:"li.multiimagesnews_main_first", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
         selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
