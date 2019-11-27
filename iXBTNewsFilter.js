@@ -13,14 +13,24 @@
 (function() {
     'use strict';
 
-    var bannedItems = ["Xiaomi", "Oukitel", "Leagoo"];
+    var bannedHeaderItems = ["Xiaomi", "Oukitel", "Leagoo"];
+    var bannedContentItems = ["инсайдер", "рендер"];
 
+    // Remove by wrong headers
+    filterArticlesByContent('h2', bannedHeaderItems);
+    //Remove by wrong article text
+    filterArticlesByContent('.item__text', bannedContentItems);
+
+})();
+
+function filterArticlesByContent(selector, bannedItems)
+{
     try
     {
         var articles = $('div.item.no-padding');
 
         articles.each(function(i, article) {
-            var headers = $(article).find('h2').clone();
+            var headers = $(article).find(selector).clone();
 
             headers.each(function(j, header) {
                 var headerText = header.innerText;
@@ -35,7 +45,7 @@
     {
         console.log('Error: ' + e.message);
     }
-})();
+}
 
 waitForKeyElements ("section.comment", filterComments);
 
@@ -43,7 +53,7 @@ function filterComments(jnode)
 {
     console.log('filterComments');
 
-    var bannedItems = ["Вызов девушек", "подтянуть живот", "Кому нужны проститутки"];
+    var bannedItems = ["Вызов девушек", "подтянуть живот", "Кому нужны проститутки", "­", "Качественный секс", "Кaчеcтвенный сeкc", "Всем приветик", "❤️"];
 
     try
     {
