@@ -18,6 +18,7 @@
     {
         var selectors = [];
         selectors.push({articleSelector:"div.element.B3.ghcite.noBottomPadding", indicatorSelector:"span.paywall_art_indicator"});
+        selectors.push({articleSelector:"div.B3.ghcite.noBottomPadding", indicatorSelector:"a[href*='plus.ynet.co.il']"});
         selectors.push({articleSelector:"ul.mta_pic_items", indicatorSelector:"img.paywall_img_indicator"});
         selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"span.ynet_pay_54x20.article"});
         selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
@@ -27,6 +28,7 @@
         selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"a.pplus_pay_54x20"});
         selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"span.ynet_pay_58x20.article"});
         selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
+        selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"a[href*='plus.ynet.co.il']"});
         selectors.push({articleSelector:"li.MultiImagesLeft_main_first", indicatorSelector:"a.ynet_pay_54x20"});
         selectors.push({articleSelector:"li.multiimagesnews_main_first", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
         selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
