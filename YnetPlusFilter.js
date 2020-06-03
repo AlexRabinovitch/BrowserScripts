@@ -23,6 +23,8 @@
         selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"span.ynet_pay_54x20.article"});
         selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
         selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"span.ynet_pay_58x20.article"});
+        selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
+        selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"a:contains('מייגן')"});
         selectors.push({articleSelector:"li.relative_block", indicatorSelector:"img[src='/images/premium/xsmall_paywall_icon_45x14.png']"});
         selectors.push({articleSelector:"li[data-vr-contentbox]", indicatorSelector:"img[src='/images/premium/xsmall_paywall_icon_45x14.png']"});
         selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"a.pplus_pay_54x20"});
@@ -34,7 +36,6 @@
         selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
         selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
         selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
-        selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
         selectors.push({articleSelector:"div.rpphp_main_header", indicatorSelector:"img[src*='/yplus.png']"});
         selectors.push({articleSelector:"li", indicatorSelector:"img[src*='/xsmall_paywall_icon_45x14.png']"});
 
