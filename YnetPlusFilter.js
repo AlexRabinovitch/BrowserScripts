@@ -38,6 +38,11 @@
         selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
         selectors.push({articleSelector:"div.rpphp_main_header", indicatorSelector:"img[src*='/yplus.png']"});
         selectors.push({articleSelector:"li", indicatorSelector:"img[src*='/xsmall_paywall_icon_45x14.png']"});
+        
+        selectors.push({articleSelector:"div.layoutItem.strip-1150", indicatorSelector:"div[class='havakIcon onImage']"});
+        selectors.push({articleSelector:"div.slotView", indicatorSelector:"div[class='havakIcon onImage']"});
+        selectors.push({articleSelector:"div.slotView", indicatorSelector:"div[class='havakIcon onTextRow']"});
+        selectors.push({articleSelector:"div.slotView", indicatorSelector:"div:contains('מייגן')"});
 
         var i;
         for(i = 0; i < selectors.length; i++)
