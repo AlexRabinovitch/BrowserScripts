@@ -43,6 +43,9 @@
         selectors.push({articleSelector:"div.slotView", indicatorSelector:"div[class='havakIcon onImage']"});
         selectors.push({articleSelector:"div.slotView", indicatorSelector:"div[class='havakIcon onTextRow']"});
         selectors.push({articleSelector:"div.slotView", indicatorSelector:"div:contains('מייגן')"});
+        selectors.push({articleSelector:"div.slotView", indicatorSelector:"div:contains('קרדשיאן')"});
+        selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector:"div:contains('Pplus')"});
+
 
         var i;
         for(i = 0; i < selectors.length; i++)
