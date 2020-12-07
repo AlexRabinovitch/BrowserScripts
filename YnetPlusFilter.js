@@ -44,6 +44,8 @@
         selectors.push({articleSelector:"div.slotView", indicatorSelector:"div[class='havakIcon onTextRow']"});
         selectors.push({articleSelector:"div.slotView", indicatorSelector:"div:contains('מייגן')"});
         selectors.push({articleSelector:"div.slotView", indicatorSelector:"div:contains('קרדשיאן')"});
+        selectors.push({articleSelector:"div.slotView", indicatorSelector:"a[href*='pplus.ynet.co.il']"});
+        selectors.push({articleSelector:"div.slotView", indicatorSelector:"a[href*='xnet.ynet.co.il']"});
         selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector:"div:contains('Pplus')"});
 
 
