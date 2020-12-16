@@ -172,7 +172,8 @@ function fillFilters()
     var filter = new Object();
     filter.searchName = "id-1"; // 4, 5, 6 inch cowboys
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pails', 'drum', 'Sesame', 'giraffe'];
+    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pails', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald'];
+    filter.excludeItemIDs = [154246251005];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -183,12 +184,17 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-3"; // mounted cowboys and indians
-    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden'];
+    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-4"; // frontiersmen
     filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b'];
+    _filters[filter.searchName] = filter;
+
+    filter = new Object();
+    filter.searchName = "id-5"; // Marx knights
+    filter.excludeItemIDs = [154243504848];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -221,6 +227,7 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-19"; // Marx horses
     filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action'];
+    filter.excludeItemIDs = [313345880648, 114578590860, 114578576422, 402611037446, 402611035819, 114578572400, 114578570195];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
