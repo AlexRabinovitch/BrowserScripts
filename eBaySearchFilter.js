@@ -184,12 +184,13 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-3"; // mounted cowboys and indians
-    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp'];
+    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-4"; // frontiersmen
     filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b'];
+    filter.excludeItemIDs = [184583432373];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -199,12 +200,12 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-7"; // Marx cowboys
-    filter.excludeTerms = ['Jonny West', 'lithographed'];
+    filter.excludeTerms = ['Jonny West', 'lithographed', 'crazy', 'Gabriel'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-10"; // Elastolin
-    filter.excludeTerms = ['ground', 'compound', 'british', '\\bgerman\\b', 'composée', 'composite', 'French', '7th', 'Allemand', 'Civil war'];
+    filter.excludeTerms = ['ground', 'compound', 'british', '\\bgerman\\b', 'composée', 'composite', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung'];
     filter.complexTerms = [];
     filter.complexTerms.push(buildComplexTermsFilter(['soldier'], ['Norman', 'Roman', 'cowboy', 'indian', 'medieval', 'middle', 'castle', 'knight', 'ritter']));
     _filters[filter.searchName] = filter;
@@ -216,7 +217,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-17"; // Marx wagon, buckboard, stagecoach
-    filter.excludeTerms = ['pistol', 'Jonny West', 'dairy'];
+    filter.excludeTerms = ['pistol', 'Jonny West', 'dairy', 'Bonnie-Bilt'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -226,13 +227,19 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-19"; // Marx horses
-    filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action'];
+    filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action', 'noble', 'Marvel', 'Jane', 'Josie'];
     filter.excludeItemIDs = [313345880648, 114578590860, 114578576422, 402611037446, 402611035819, 114578572400, 114578570195];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
-    filter.excludeTerms = ['lithographed'];
+    filter.excludeTerms = ['lithographed', 'ramp'];
+    _filters[filter.searchName] = filter;
+
+    filter = new Object();
+    filter.searchName = "id-23"; // Marx saddles
+    filter.excludeTerms = ['Custer', 'joint', 'movable'];
+    filter.excludeItemIDs = [114578590860, 114578577961, 114578576422, 402611037446, 402611035819, 114578572400];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
