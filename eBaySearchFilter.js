@@ -184,7 +184,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-3"; // mounted cowboys and indians
-    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra'];
+    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -205,7 +205,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-10"; // Elastolin
-    filter.excludeTerms = ['ground', 'compound', 'british', '\\bgerman\\b', 'composée', 'composite', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung'];
+    filter.excludeTerms = ['ground', 'compound', 'british', '\\bgerman\\b', 'composée', 'composite', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung', 'Clairet', 'massebäume'];
     filter.complexTerms = [];
     filter.complexTerms.push(buildComplexTermsFilter(['soldier'], ['Norman', 'Roman', 'cowboy', 'indian', 'medieval', 'middle', 'castle', 'knight', 'ritter']));
     _filters[filter.searchName] = filter;
