@@ -138,6 +138,24 @@ function processNode(node, filter)
                 }
             }
         }
+        if(filter.excludeSellers)
+        {
+            var sellers = node.querySelectorAll('span.s-item__seller-info-text');
+            var seller = '';
+            if(sellers && sellers.length > 0)
+            {
+                seller = sellers[0].innerText;
+                console.log('Seller found: ' + seller);
+
+                regex = new RegExp(filter.excludeSellers.join("|"), "i");
+                if(regex.test(seller))
+                {
+                    console.log('Seller match found: ' + seller);
+                    node.remove();
+                    return;
+                }
+            }
+        }
         if(filter.excludeItemIDs)
         {
             var itemIDs = node.querySelectorAll('span.s-item__item-id.s-item__itemID');
@@ -149,7 +167,7 @@ function processNode(node, filter)
                 regex = new RegExp(filter.excludeItemIDs.join("|"), "i");
                 if(regex.test(itemID))
                 {
-                    console.log('Item ID match found: ' + title);
+                    console.log('Item ID match found: ' + itemID);
                     node.remove();
                     return;
                 }
@@ -172,7 +190,7 @@ function fillFilters()
     var filter = new Object();
     filter.searchName = "id-1"; // 4, 5, 6 inch cowboys
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pails', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald'];
+    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pails', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby'];
     filter.excludeItemIDs = [154246251005];
     _filters[filter.searchName] = filter;
 
@@ -184,18 +202,19 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-3"; // mounted cowboys and indians
-    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b'];
+    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b', 'windup', 'puzzle', 'motorcycle'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-4"; // frontiersmen
-    filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b'];
+    filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b', 'puzzle'];
     filter.excludeItemIDs = [184583432373];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-5"; // Marx knights
-    filter.excludeItemIDs = [154243504848];
+    filter.excludeTerms = ['Gordon'];
+    filter.excludeItemIDs = [154243504848, 284118371844];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -205,14 +224,20 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-10"; // Elastolin
-    filter.excludeTerms = ['ground', 'compound', 'british', '\\bgerman\\b', 'composée', 'composite', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung', 'Clairet', 'massebäume'];
+    filter.excludeTerms = ['ground', 'compound', 'british', '\\bgerman\\b', 'composée', 'composite', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung', 'Clairet', 'massebäume', '^elastolin$'];
+    filter.excludeSellers = ['ship0v', 'frichmuthboy'];
     filter.complexTerms = [];
     filter.complexTerms.push(buildComplexTermsFilter(['soldier'], ['Norman', 'Roman', 'cowboy', 'indian', 'medieval', 'middle', 'castle', 'knight', 'ritter']));
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-12"; // Ideal knights
-    filter.excludeTerms = ['ideal stocking filler', '\\bmetal\\b','ideal for','ideal 4'];
+    filter.excludeTerms = ['ideal stocking', '\\bmetal\\b','ideal for','ideal 4'];
+    _filters[filter.searchName] = filter;
+
+    filter = new Object();
+    filter.searchName = "id-13"; // Ideal pirates
+    filter.excludeTerms = ['ideal stocking'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -227,13 +252,19 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-19"; // Marx horses
-    filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action', 'noble', 'Marvel', 'Jane', 'Josie'];
-    filter.excludeItemIDs = [313345880648, 114578590860, 114578576422, 402611037446, 402611035819, 114578572400, 114578570195];
+    filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action', 'noble', 'Marvel', 'Jane', 'Josie', 'joint', 'moving', 'Gordon'];
+    filter.excludeItemIDs = [313345880648, 114578590860, 114578576422, 402611037446, 402611035819, 114578572400, 114578570195, 324423429624];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
     filter.excludeTerms = ['lithographed', 'ramp'];
+    filter.excludeItemIDs = [174564762027, 284120067282, 184586469330, 154251838443, 402614585946];
+    _filters[filter.searchName] = filter;
+
+    filter = new Object();
+    filter.searchName = "id-22"; // Marx pirates
+    filter.excludeTerms = ['sailor queen'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -246,7 +277,6 @@ function fillFilters()
     filter.searchName = "id-24"; // Marx vikings
     filter.excludeItemIDs = [154243504848, 174555319224, 313307344713, 274580309520];
     _filters[filter.searchName] = filter;
-
     console.log('Done filling filters.');
 }
 
