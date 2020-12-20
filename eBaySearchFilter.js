@@ -197,12 +197,12 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-2"; // 4, 5, 6 inch indians
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['plush', 'drum', 'billboard', 'Micro Stars'];
+    filter.excludeTerms = ['plush', 'drum', 'billboard', 'Micro Stars', 'Schleich'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-3"; // mounted cowboys and indians
-    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b', 'windup', 'puzzle', 'motorcycle'];
+    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b', 'windup', 'puzzle', 'motorcycle', 'outfit', 'Safari', 'Schleich'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -213,13 +213,14 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-5"; // Marx knights
-    filter.excludeTerms = ['Gordon'];
+    filter.excludeTerms = ['Gordon', 'golden'];
     filter.excludeItemIDs = [154243504848, 284118371844];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-7"; // Marx cowboys
     filter.excludeTerms = ['Jonny West', 'lithographed', 'crazy', 'Gabriel'];
+    filter.excludeSellers = ['brcli_25'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -258,7 +259,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
-    filter.excludeTerms = ['lithographed', 'ramp'];
+    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b'];
     filter.excludeItemIDs = [174564762027, 284120067282, 184586469330, 154251838443, 402614585946];
     _filters[filter.searchName] = filter;
 
