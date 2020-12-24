@@ -209,11 +209,12 @@ function fillFilters()
     filter.searchName = "id-4"; // frontiersmen
     filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b', 'puzzle', 'ad&d', 'warhammer'];
     filter.excludeItemIDs = [184583432373];
+    filter.excludeSellers = ['gotakola'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-5"; // Marx knights
-    filter.excludeTerms = ['Gordon', 'golden'];
+    filter.excludeTerms = ['Gordon', 'golden', '\\bgold knight\\b'];
     filter.excludeItemIDs = [154243504848, 284118371844];
     _filters[filter.searchName] = filter;
 
@@ -259,13 +260,13 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-19"; // Marx horses
     filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action', 'noble', 'Marvel', 'Jane', 'Josie', 'joint', 'moving', 'Gordon', 'MCML', 'gold knight'];
-    filter.excludeSellers = ['northcedarsigns'];
+    filter.excludeSellers = ['northcedarsigns', 'tebur-8'];
     filter.excludeItemIDs = [313345880648, 114578590860, 114578576422, 402611037446, 402611035819, 114578572400, 114578570195, 324423429624];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
-    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target'];
+    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8'];
     filter.excludeItemIDs = [174564762027, 284120067282, 184586469330, 154251838443, 402614585946];
     _filters[filter.searchName] = filter;
 
