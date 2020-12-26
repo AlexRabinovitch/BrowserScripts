@@ -10,67 +10,96 @@
 // @grant        none
 // ==/UserScript==
 
+var selectors = [];
 
 (function() {
     'use strict';
 
+    fillSelectors();
+
+    findNodesAndClear();
+
+})();
+
+function fillSelectors()
+{
+        selectors.push({articleSelector:"div.layoutItem.strip-1150", indicatorSelector: ["div[class='havakIcon onImage']",
+                                                                                        "a[href*='z.ynet.co.il']"]});
+        selectors.push({articleSelector:"div.slotView", indicatorSelector: ["div[class='havakIcon onImage']",
+                                                                           "div[class='havakIcon onTextRow']",
+                                                                           "div:contains('מייגן')",
+                                                                           "div:contains('קרדשיאן')",
+                                                                           "a[href*='pplus.ynet.co.il']",
+                                                                           "a[href*='xnet.ynet.co.il']"]});
+        //selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector: ["div:contains('Pplus')"]});
+        selectors.push({articleSelector:"div.layoutItem.multi-article-images", indicatorSelector: ["div:contains('Pplus')",
+                                                                                                  "div:contains('+ynet')"]});
+        selectors.push({articleSelector:"div.layoutItem.multi-article", indicatorSelector: ["div:contains('אסטרולוגיה')"]});
+}
+
+function findNodesAndClear()
+{
     try
     {
-        var selectors = [];
-        selectors.push({articleSelector:"div.element.B3.ghcite.noBottomPadding", indicatorSelector:"span.paywall_art_indicator"});
-        selectors.push({articleSelector:"div.B3.ghcite.noBottomPadding", indicatorSelector:"a[href*='plus.ynet.co.il']"});
-        selectors.push({articleSelector:"ul.mta_pic_items", indicatorSelector:"img.paywall_img_indicator"});
-        selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"span.ynet_pay_54x20.article"});
-        selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
-        selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"span.ynet_pay_58x20.article"});
-        selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
-        selectors.push({articleSelector:"div.pphp_li_items", indicatorSelector:"a:contains('מייגן')"});
-        selectors.push({articleSelector:"li.relative_block", indicatorSelector:"img[src='/images/premium/xsmall_paywall_icon_45x14.png']"});
-        selectors.push({articleSelector:"li[data-vr-contentbox]", indicatorSelector:"img[src='/images/premium/xsmall_paywall_icon_45x14.png']"});
-        selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"a.pplus_pay_54x20"});
-        selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"span.ynet_pay_58x20.article"});
-        selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
-        selectors.push({articleSelector:"li.pphp_main_first", indicatorSelector:"a[href*='plus.ynet.co.il']"});
-        selectors.push({articleSelector:"li.MultiImagesLeft_main_first", indicatorSelector:"a.ynet_pay_54x20"});
-        selectors.push({articleSelector:"li.multiimagesnews_main_first", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
-        selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
-        selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/small_paywall_icon_54x20.png']"});
-        selectors.push({articleSelector:"li[style='position:relative;']", indicatorSelector:"img[src='/images/premium/left_small_paywall_icon_58x20.png']"});
-        selectors.push({articleSelector:"div.rpphp_main_header", indicatorSelector:"img[src*='/yplus.png']"});
-        selectors.push({articleSelector:"li", indicatorSelector:"img[src*='/xsmall_paywall_icon_45x14.png']"});
-        
-        selectors.push({articleSelector:"div.layoutItem.strip-1150", indicatorSelector:"div[class='havakIcon onImage']"});
-        selectors.push({articleSelector:"div.slotView", indicatorSelector:"div[class='havakIcon onImage']"});
-        selectors.push({articleSelector:"div.slotView", indicatorSelector:"div[class='havakIcon onTextRow']"});
-        selectors.push({articleSelector:"div.slotView", indicatorSelector:"div:contains('מייגן')"});
-        selectors.push({articleSelector:"div.slotView", indicatorSelector:"div:contains('קרדשיאן')"});
-        selectors.push({articleSelector:"div.slotView", indicatorSelector:"a[href*='pplus.ynet.co.il']"});
-        selectors.push({articleSelector:"div.slotView", indicatorSelector:"a[href*='xnet.ynet.co.il']"});
-        selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector:"div:contains('Pplus')"});
-
-
         var i;
         for(i = 0; i < selectors.length; i++)
         {
-            findItemsAndRemoveByChildrenExistence(selectors[i].articleSelector, selectors[i].indicatorSelector);
+            findItemsAndRemoveByChildrenExistence(document, selectors[i].articleSelector, selectors[i].indicatorSelector);
         }
     }
     catch(e)
     {
         console.log('Error: ' + e.message);
     }
-})();
+}
 
-function findItemsAndRemoveByChildrenExistence(itemsSelector, childrenSelector)
+function findItemsAndRemoveByChildrenExistence(root, itemsSelector, childrenSelector)
 {
-    var items = $(itemsSelector);
+    /*var items = root.querySelectorAll(itemsSelector);
 
-    items.each(function(i, item) {
-        var indicators = $(item).find(childrenSelector).clone();
-
-        if(indicators.length > 0)
+    if(!items)
+    {
+        return;
+    }
+    for(var i = 0; i < items.length; i++)
+    {
+        var item = items[i];
+        if(item.querySelector(childrenSelector))
         {
-            $(item).remove();
+            item.remove();
         }
-    });
+    }*/
+
+    try
+    {
+        var jroot = $(root);
+
+        var items;
+        if(root === document)
+        {
+            items = $(itemsSelector);
+        }
+        else
+        {
+            items = jroot.children(itemsSelector);
+        }
+
+        items.each(function(i, item) {
+            for(var j = 0; j < childrenSelector.length; j++)
+            {
+                var indicators = $(item).find(childrenSelector[j]).clone();
+
+                if(indicators.length > 0)
+                {
+                    $(item).remove();
+                    break;
+                }
+            }
+        });
+    }
+    catch(e)
+    {
+        console.log('Error: ' + e.message);
+    }
+
 }
