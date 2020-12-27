@@ -180,24 +180,24 @@ function fillFilters()
 {
     console.log('Filling filters...');
 
-    var inch456 = ['6"', '6”', '6 "', "6''", '6inch', '6 inch', '6inches', '6 inches', 'six inch',
-                        '5"', '5”', '5 "', "5''", '5inch', '5 inch', '5inches', '5 inches', 'five inch',
-                        '5 1/2"', '5 1/2”', '5 1/2 "', "5 1/2''", '5 1/2inch', '5 1/2 inch', '5  1/2inches', '5 1/2 inches', 'five 1/2 inch',
-                        '4"', '4”', '4 "', "4''", '4inch', '4 inch', '4inches', '4 inches', 'four inch',
-                        '4 1/2"', '4 1/2”', '4 1/2 "', "4 1/2''", '4 1/2inch', '4 1/2 inch', '4 1/2inches', '4 1/2 inches', 'four 1/2 inch'
+    var inch456 = ['6"', '6”', '6 "', "6''", '6inch', '6 inch', 'six inch',
+                        '5"', '5”', '5 "', "5''", '5inch', '5 inch', 'five inch',
+                        '5 1/2"', '5 1/2”', '5 1/2 "', "5 1/2''", '5 1/2inch', '5 1/2 inch', 'five 1/2 inch',
+                        '4"', '4”', '4 "', "4''", '4inch', '4 inch', 'four inch',
                         ];
+
 
     var filter = new Object();
     filter.searchName = "id-1"; // 4, 5, 6 inch cowboys
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pails', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby'];
+    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pails', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby', 'boot', '2 3/4"', '2-1/4"', '2-3/4"'];
     filter.excludeItemIDs = [154246251005];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-2"; // 4, 5, 6 inch indians
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['plush', 'drum', 'billboard', 'Micro Stars', 'Schleich', 'wind up'];
+    filter.excludeTerms = ['plush', 'drum', 'billboard', 'Micro Stars', 'Schleich', 'wind up', 'Tonka'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -222,7 +222,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-7"; // Marx cowboys
-    filter.excludeTerms = ['Jonny West', 'lithographed', 'crazy', 'Gabriel', 'target', 'Buck Rogers', 'windup'];
+    filter.excludeTerms = ['Jonny West', 'lithographed', 'crazy', 'Gabriel', 'target', 'Buck Rogers', 'windup', '\\bno Marx\\b'];
     filter.excludeSellers = ['brcli_25'];
     _filters[filter.searchName] = filter;
 
@@ -240,6 +240,11 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
+    filter.searchName = "id-11"; // Empire
+    filter.excludeTerms = ['Hachette-marshals'];
+    _filters[filter.searchName] = filter;
+
+    filter = new Object();
     filter.searchName = "id-12"; // Ideal knights
     filter.excludeTerms = ['ideal stocking', '\\bmetal\\b','ideal for','ideal 4'];
     filter.excludeSellers = ['laparkamania'];
@@ -252,7 +257,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-17"; // Marx wagon, buckboard, stagecoach
-    filter.excludeTerms = ['pistol', 'Jonny West', 'dairy', 'Bonnie-Bilt', 'derringer'];
+    filter.excludeTerms = ['pistol', 'Jonny West', 'dairy', 'Bonnie-Bilt', 'derringer', 'steamer'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -269,8 +274,8 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
-    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8'];
-    filter.excludeSellers = ['tebur-8'];
+    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8', '\\bno Marx\\b'];
+    filter.excludeSellers = ['tebur-8', ' jess-8440'];
     filter.excludeItemIDs = [174564762027, 284120067282, 184586469330, 154251838443, 402614585946];
     _filters[filter.searchName] = filter;
 
