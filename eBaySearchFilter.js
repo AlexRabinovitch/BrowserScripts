@@ -202,21 +202,22 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-3"; // mounted cowboys and indians
-    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b', 'windup', 'puzzle', 'motorcycle', 'outfit', 'Safari', 'Schleich', 'paddle', 'elephant', 'token', 'Indian army', 'Woody', 'jacket', 'drum', 'child', 'lionel'];
-    filter.excludeSellers = ['denyakim'];
+    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b', 'windup', 'puzzle', 'motorcycle', 'outfit', 'Safari', 'Schleich', 'paddle', 'elephant', 'token', 'Indian army', 'Woody', 'jacket', 'drum', 'child', 'lionel', 'horseshoe'];
+    filter.excludeSellers = ['denyakim', 'gtohall', 'bhall0415'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-4"; // frontiersmen
-    filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b', 'puzzle', 'ad&d', 'warhammer', 'Bachmann'];
+    filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b', 'puzzle', 'ad&d', 'warhammer', 'Bachmann', 'Citadel'];
     filter.excludeItemIDs = [184583432373];
     filter.excludeSellers = ['gotakola'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-5"; // Marx knights
-    filter.excludeTerms = ['Gordon', 'golden', '\\bgold knight\\b', 'Stuart'];
-    filter.excludeItemIDs = [154243504848, 284118371844];
+    filter.excludeTerms = ['Gordon', 'golden', '\\bgold knight\\b', 'Stuart', 'prince Charles'];
+    filter.excludeSellers = ['owllady77'];
+    filter.excludeItemIDs = [154243504848, 284118371844, 174573235948];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -241,6 +242,7 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-12"; // Ideal knights
     filter.excludeTerms = ['ideal stocking', '\\bmetal\\b','ideal for','ideal 4'];
+    filter.excludeSellers = ['laparkamania'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -260,8 +262,8 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-19"; // Marx horses
-    filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action', 'noble', 'Marvel', 'Jane', 'Josie', 'joint', 'moving', 'Gordon', 'MCML', 'gold knight'];
-    filter.excludeSellers = ['northcedarsigns', 'tebur-8'];
+    filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action', 'noble', 'Marvel', 'Jane', 'Josie', 'joint', 'moving', 'Gordon', 'MCML', 'gold knight', '\\bno Marx\\b'];
+    filter.excludeSellers = ['northcedarsigns', 'tebur-8', 'gtohall', 'bhall0415'];
     filter.excludeItemIDs = [313345880648, 114578590860, 114578576422, 402611037446, 402611035819, 114578572400, 114578570195, 324423429624];
     _filters[filter.searchName] = filter;
 
@@ -276,11 +278,12 @@ function fillFilters()
     filter.searchName = "id-22"; // Marx pirates
     filter.excludeTerms = ['sailor queen'];
     filter.excludeSellers = ['robze_5'];
+    filter.excludeItemIDs = [284128517199, 174573235948];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-23"; // Marx saddles
-    filter.excludeTerms = ['Custer', 'joint', 'movable'];
+    filter.excludeTerms = ['Custer', 'joint', 'movable', '\\bno Marx\\b'];
     filter.excludeItemIDs = [114578590860, 114578577961, 114578576422, 402611037446, 402611035819, 114578572400];
     _filters[filter.searchName] = filter;
 
