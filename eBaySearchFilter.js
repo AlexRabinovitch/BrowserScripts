@@ -190,20 +190,20 @@ function fillFilters()
     var filter = new Object();
     filter.searchName = "id-1"; // 4, 5, 6 inch cowboys
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pails', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby', 'boot', '2 3/4"', '2-1/4"', '2-3/4"'];
+    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pails', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby', 'boot', 'subway', '2 3/4"', '2-1/4"', '2-3/4"'];
     filter.excludeItemIDs = [154246251005];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-2"; // 4, 5, 6 inch indians
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['plush', 'drum', 'billboard', 'Micro Stars', 'Schleich', 'wind up', 'Tonka'];
+    filter.excludeTerms = ['plush', 'drum', 'billboard', 'Micro Stars', 'Schleich', 'wind up', 'Tonka', '2 3/4"', '2-1/4"', '2-3/4"'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-3"; // mounted cowboys and indians
-    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b', 'windup', 'puzzle', 'motorcycle', 'outfit', 'Safari', 'Schleich', 'paddle', 'elephant', 'token', 'Indian army', 'Woody', 'jacket', 'drum', 'child', 'lionel', 'horseshoe'];
-    filter.excludeSellers = ['denyakim', 'gtohall', 'bhall0415'];
+    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b', 'windup', 'puzzle', 'motorcycle', 'outfit', 'Safari', 'Schleich', 'paddle', 'elephant', 'token', 'Indian army', 'Woody', 'jacket', 'drum', 'child', 'lionel', 'horseshoe', 'marble'];
+    filter.excludeSellers = ['denyakim', 'gtohall', 'bhall0415', 'laparkamania'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -234,7 +234,7 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-10"; // Elastolin
     filter.excludeTerms = ['ground', 'compound', 'british', '\\bgerman\\b', 'composée', 'composite', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung', 'Clairet', 'massebäume', '^elastolin$', 'elfer raus'];
-    filter.excludeSellers = ['ship0v', 'frichmuthboy', 'el-siluro', ' jskins72'];
+    filter.excludeSellers = ['ship0v', 'frichmuthboy', 'el-siluro', 'jskins72', 'oz75'];
     filter.complexTerms = [];
     filter.complexTerms.push(buildComplexTermsFilter(['soldier'], ['Norman', 'Roman', 'cowboy', 'indian', 'medieval', 'middle', 'castle', 'knight', 'ritter']));
     _filters[filter.searchName] = filter;
@@ -257,12 +257,12 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-17"; // Marx wagon, buckboard, stagecoach
-    filter.excludeTerms = ['pistol', 'Jonny West', 'dairy', 'Bonnie-Bilt', 'derringer', 'steamer'];
+    filter.excludeTerms = ['pistol', 'Jonny West', 'dairy', 'Bonnie-Bilt', 'derringer', 'steamer', 'oo gauge', '\\bcar\\b'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-18"; // Marx frontiersmen
-    filter.excludeTerms = ['action', 'classic recasts'];
+    filter.excludeTerms = ['action', 'classic recasts', 'ajax'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -274,8 +274,8 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
-    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8', '\\bno Marx\\b'];
-    filter.excludeSellers = ['tebur-8', ' jess-8440'];
+    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8', '\\bno Marx\\b', 'ajax', '12"', '12”'];
+    filter.excludeSellers = ['tebur-8', ' jess-8440', 'loveourprices2'];
     filter.excludeItemIDs = [174564762027, 284120067282, 184586469330, 154251838443, 402614585946];
     _filters[filter.searchName] = filter;
 
