@@ -222,7 +222,7 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-7"; // Marx cowboys
     filter.excludeTerms = ['Jonny West', 'lithographed', 'crazy', 'Gabriel', 'target', 'Buck Rogers', 'windup', '\\bno Marx\\b', 'lledo'];
-    filter.excludeSellers = ['brcli_25'];
+    filter.excludeSellers = ['brcli_25', 'james_pears'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -233,7 +233,7 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-10"; // Elastolin
     filter.excludeTerms = ['ground', 'compound', 'british', '\\bgerman\\b', 'composée', 'composite', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung', 'Clairet', 'massebäume', '^elastolin$', 'elfer raus', 'turk'];
-    filter.excludeSellers = ['ship0v', 'frichmuthboy', 'el-siluro', 'jskins72', 'oz75'];
+    filter.excludeSellers = ['ship0v', 'frichmuthboy', 'el-siluro', 'jskins72', 'oz75', 'brams741'];
     filter.complexTerms = [];
     filter.complexTerms.push(buildComplexTermsFilter(['soldier'], ['Norman', 'Roman', 'cowboy', 'indian', 'medieval', 'middle', 'castle', 'knight', 'ritter']));
     _filters[filter.searchName] = filter;
@@ -274,7 +274,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
-    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8', '\\bno Marx\\b', 'ajax', '12"', '12”', 'skate'];
+    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8', '\\bno Marx\\b', 'ajax', '12"', '12”', 'skate', 'Big Jim'];
     filter.excludeSellers = ['tebur-8', ' jess-8440', 'loveourprices2', 'brcli_25', 'mustang2388', 'scrabbletime'];
     filter.excludeItemIDs = [174564762027, 284120067282, 184586469330, 154251838443, 402614585946];
     _filters[filter.searchName] = filter;
@@ -295,6 +295,7 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-24"; // Marx vikings
     filter.excludeItemIDs = [154243504848, 174555319224, 313307344713, 274580309520];
+    filter.excludeSellers = ['stanlhardi', 'snookiell-9'];
     _filters[filter.searchName] = filter;
 
     console.log('Done filling filters.');
