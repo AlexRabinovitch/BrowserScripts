@@ -30,7 +30,8 @@ function fillSelectors()
                                                                            "div:contains('מייגן')",
                                                                            "div:contains('קרדשיאן')",
                                                                            "a[href*='pplus.ynet.co.il']",
-                                                                           "a[href*='xnet.ynet.co.il']"]});
+                                                                           "a[href*='xnet.ynet.co.il']",
+                                                                           "a[href*='ynet.co.il/dating']"]});
         //selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector: ["div:contains('Pplus')"]});
         selectors.push({articleSelector:"div.layoutItem.multi-article-images", indicatorSelector: ["div:contains('Pplus')",
                                                                                                   "div:contains('+ynet')"]});
