@@ -24,18 +24,25 @@ var selectors = [];
 function fillSelectors()
 {
         selectors.push({articleSelector:"div.layoutItem.strip-1150", indicatorSelector: ["div[class='havakIcon onImage']",
-                                                                                        "a[href*='z.ynet.co.il']"]});
+                                                                                        "a[href*='z.ynet.co.il']",
+                                                                                        "a[href*='ynet.co.il/judaism']",
+                                                                                        "a[href*='lps.ynet.co.il']"]});
         selectors.push({articleSelector:"div.slotView", indicatorSelector: ["div[class='havakIcon onImage']",
                                                                            "div[class='havakIcon onTextRow']",
                                                                            "div:contains('מייגן')",
                                                                            "div:contains('קרדשיאן')",
                                                                            "a[href*='pplus.ynet.co.il']",
                                                                            "a[href*='xnet.ynet.co.il']",
-                                                                           "a[href*='ynet.co.il/dating']"]});
+                                                                           "a[href*='ynet.co.il/dating']",
+                                                                           "a[href*='lps.ynet.co.il']"]});
         //selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector: ["div:contains('Pplus')"]});
         selectors.push({articleSelector:"div.layoutItem.multi-article-images", indicatorSelector: ["div:contains('Pplus')",
-                                                                                                  "div:contains('+ynet')"]});
-        selectors.push({articleSelector:"div.layoutItem.multi-article", indicatorSelector: ["div:contains('אסטרולוגיה')"]});
+                                                                                                   "a[href*='benefits.yedioth.co.il']",
+                                                                                                   "div:contains('+ynet')"]});
+        selectors.push({articleSelector:"div.layoutItem.multi-article", indicatorSelector: ["div:contains('אסטרולוגיה')",
+                                                                                           "a[href*='xnet.ynet.co.il']",
+                                                                                           "a[href*='ynet.co.il/judaism']",
+                                                                                           "a[href*='ynet.co.il/dating']"]});
 }
 
 function findNodesAndClear()
