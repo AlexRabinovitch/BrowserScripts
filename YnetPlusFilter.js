@@ -26,6 +26,7 @@ function fillSelectors()
         selectors.push({articleSelector:"div.layoutItem.strip-1150", indicatorSelector: ["div[class='havakIcon onImage']",
                                                                                         "a[href*='z.ynet.co.il']",
                                                                                         "a[href*='ynet.co.il/judaism']",
+                                                                                        "a[href*='ynet.co.il/laisha']",
                                                                                         "a[href*='lps.ynet.co.il']"]});
         selectors.push({articleSelector:"div.slotView", indicatorSelector: ["div[class='havakIcon onImage']",
                                                                            "div[class='havakIcon onTextRow']",
@@ -38,6 +39,8 @@ function fillSelectors()
         //selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector: ["div:contains('Pplus')"]});
         selectors.push({articleSelector:"div.layoutItem.multi-article-images", indicatorSelector: ["div:contains('Pplus')",
                                                                                                    "a[href*='benefits.yedioth.co.il']",
+                                                                                                   "a[href*='ynet.co.il/activism/category/36572']",
+                                                                                                   "a[href*='ynet.co.il/laisha']",
                                                                                                    "div:contains('+ynet')"]});
         selectors.push({articleSelector:"div.layoutItem.multi-article", indicatorSelector: ["div:contains('אסטרולוגיה')",
                                                                                            "a[href*='xnet.ynet.co.il']",
