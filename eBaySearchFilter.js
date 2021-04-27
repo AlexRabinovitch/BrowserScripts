@@ -190,6 +190,7 @@ function fillFilters()
     var inch456Exclude = ['crescent', 'payton', '1.5"', '1 3/4"', '2 1/4', '2.5”', '2 3/4"', '2-1/4', '2 1/4"', '2.5”', '2-3/4"', '2 3/4', '2.75"', '1:12', '8 3/4"', '12"', '12.5"'];
 
     var commonExcludedSellers = ['gtohall', 'bhall0415', 'laparkamania', 'softball-1baseball-2', 'jonsmemorabiliamart64', 'picker_picker', 'oldfartcollections', 'annfrei_12', 'luckynickels', 'griff2299', 'sstoys2', 'kvik_567', 'mirthunder', 'brcli_25', 'kerrlindle0', 'crash29', 'janerose2014', 'softviking', 'pezdudewelch', 'tbt', 'davenportpm1', 'leopardlover48', 'www.telecoin.bizland.com', 'infernal_devices', '2rosesathome', 'j_byers_24'];
+    var commonExcludedTerms = ['cherokee', 'cap.?gun', 'wind.?up', 'ring.?hand', 'pin.?ball', 'nos rare Marx$', ', Marx$'];
 
     var excludeSellersHorsesSaddles = ['apeman28', 'recordsiam7', 'rugbychick12'];
     var excludeTermssHorsesSaddles = ['Pancho', 'Marvel', 'Valou?r', 'movable', 'joint', 'articulated'];
@@ -197,8 +198,9 @@ function fillFilters()
     var filter = new Object();
     filter.searchName = "id-1"; // 4, 5, 6 inch cowboys
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pail', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby', 'boot', 'subway', 'disney', 'POST CARD', 'Playskool', '\\bdolls?\\b', 'GI Joe', 'wind up', 'my little pony', 'menko', 'cap gun', 'cowboy hat'];
+    filter.excludeTerms = ['Chap Mei', 'bendable', 'Tonka', 'Pail', 'drum', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby', 'boot', 'subway', 'disney', 'POST CARD', 'Playskool', '\\bdolls?\\b', 'GI Joe', 'my little pony', 'menko', 'cap gun', 'cowboy hat'];
     filter.excludeTerms = filter.excludeTerms.concat(inch456Exclude);
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['jodaug_11', 'cccric-23', 'lostandfoundtreasure'];
     filter.excludeItemIDs = [154246251005];
     _filters[filter.searchName] = filter;
@@ -206,14 +208,16 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-2"; // 4, 5, 6 inch indians
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['plush', 'drum', 'billboard', 'Micro Stars', 'Schleich', 'wind up', 'Tonka', 'swirl', 'bendable', 'Legends of the West', 'marchon', 'board game', 'elephant'];
+    filter.excludeTerms = ['plush', 'drum', 'billboard', 'Micro Stars', 'Schleich', 'Tonka', 'swirl', 'bendable', 'Legends of the West', 'marchon', 'board game', 'elephant'];
     filter.excludeTerms = filter.excludeTerms.concat(inch456Exclude);
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['jodaug_11'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-3"; // mounted cowboys and indians
-    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'wind up', '\\baction\\b', 'windup', 'puzzle', 'motorcycle', 'outfit', 'Safari', 'Schleich', 'paddle', 'elephant', 'token', 'Indian army', 'Woody', 'jacket', 'drum', 'child', 'lionel', 'horseshoe', 'marble', 'folk art', 'playmobil', 'puppet', '\\bdolls?\\b', '\\bho\\b', 'mutiny', 'Jane West', 'holster', ', Marx$', 'stuffed', 'board game', 'Lincoln log', 'Bebop', '\\btin\\b', 'Star Ace', 'Hopalong', 'composition', 'country', 'Atkins', 'Bravestar', 'flock', 'legends', 'stencil', 'ducky', 'Peppa pig', 'hotwheels', 'cowboy hat', 'cowboy boot', 'domino', 'mechanical', 'card', 'yo.?yo', 'harmonica', 'W Britain', 'purse', '28mm', '12"', '10”', '1:6', '1/6', '1"'];
+    filter.excludeTerms = ['swoppet', 'Tradition', 'Trophy Miniatures', 'Traditional Models', 'Tonka', 'nursery', 'wooden', 'halloween', 'mvp', '\\bramp\\b', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', '\\baction\\b', 'puzzle', 'motorcycle', 'outfit', 'Safari', 'Schleich', 'paddle', 'elephant', 'token', 'Indian army', 'Woody', 'jacket', 'drum', 'child', 'lionel', 'horseshoe', 'marble', 'folk art', 'playmobil', 'puppet', '\\bdolls?\\b', '\\bho\\b', 'mutiny', 'Jane West', 'holster', 'stuffed', 'board game', 'Lincoln log', 'Bebop', '\\btin\\b', 'Star Ace', 'Hopalong', 'composition', 'country', 'Atkins', 'Bravestar', 'flock', 'legends', 'stencil', 'ducky', 'Peppa pig', 'hotwheels', 'cowboy hat', 'cowboy boot', 'domino', 'mechanical', 'card', 'yo.?yo', 'harmonica', 'W Britain', 'purse', 'Roll Call', 'velvet', 'blind', '28mm', '12"', '10”', '1:6', '1/6', '1"'];
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['denyakim', 'ourfinds', 'northstate', 'labellesassy', 'happinessfund', 'grg.store', 'yannis1960grvtg'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     filter.complexTerms = [];
@@ -222,9 +226,9 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-4"; // frontiersmen
-    filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b', 'puzzle', 'ad&d', 'warhammer', 'Bachmann', 'Citadel', 'Skylander', 'Lincoln log', 'Dakin', 'Johnny West', '25mm', 'Pokémon', 'speed', 'lost world', 'pillow', 'wyrd', 'Legends of the West', 'wallet', '1:6th', 'gloves', 'Mordenkainen', 'Mandalorian', 'stuffed', 'benalish', 'duluth', 'song of ice', 'demigod', 'resin', 'Kilgore', '\\bdolls?\\b', 'Monsters', 'hell.?dorado', 'baseball', 'belt', 'badge', 'paw patrol', 'ruby', '20mm', 'gator', '1 5/8', '1/6'];
+    filter.excludeTerms = ['reel', 'mug', 'Bushido', 'ActionMan', 'ActionTeam', 'lead', 'coin', 'Hotwheels', 'Glass', 'teddy bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b', 'puzzle', 'ad&d', 'warhammer', 'Bachmann', 'Citadel', 'Skylander', 'Lincoln log', 'Dakin', 'Johnny West', '25mm', 'Pokémon', 'speed', 'lost world', 'pillow', 'wyrd', 'Legends of the West', 'wallet', '1:6th', 'gloves', 'Mordenkainen', 'Mandalorian', 'stuffed', 'benalish', 'duluth', 'song of ice', 'demigod', 'resin', 'Kilgore', '\\bdolls?\\b', 'Monsters', 'hell.?dorado', 'baseball', 'belt', 'badge', 'paw patrol', 'ruby', 'gator', 'star wars', 'Buddy.?L', 'alien', '20mm', '1 5/8', '1/6'];
     filter.excludeItemIDs = [184583432373, 124617729318];
-    filter.excludeSellers = ['gotakola', 'dayspringdays', 'rpols6', 'unlimited_hk_llc', 'justkidsnostalgia', 'rinnys_boutique', 'scarlettosnow', 'koolman44', 'the-kojima-japaneseshop'];
+    filter.excludeSellers = ['gotakola', 'dayspringdays', 'rpols6', 'unlimited_hk_llc', 'justkidsnostalgia', 'rinnys_boutique', 'scarlettosnow', 'koolman44', 'the-kojima-japaneseshop', 'dollyscards'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
@@ -237,7 +241,8 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-7"; // Marx cowboys
-    filter.excludeTerms = ['Jonny West', 'lithographed', 'crazy', 'Gabriel', 'target', 'Buck Rogers', 'windup', '\\bno Marx\\b', 'lledo', 'cap gun', 'linemar', 'gijoe', 'reamsa', 'jecsan', 'nos rare Marx$', 'ride.on', 'marx style', 'johnnie', '7.5"', '12"', ' 12”', '1/72'];
+    filter.excludeTerms = ['Jonny West', 'lithographed', 'crazy', 'Gabriel', 'target', 'Buck Rogers', '\\bno Marx\\b', 'lledo', 'cap gun', 'linemar', 'gijoe', 'reamsa', 'jecsan', 'ride.on', 'marx style', 'johnnie', '7.5"', '12"', ' 12”', '1/72'];
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['jerseycameron'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     console.log(filter.excludeSellers);
@@ -276,20 +281,23 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-17"; // Marx wagon, buckboard, stagecoach
-    filter.excludeTerms = ['pistol', 'Jonny West', 'dairy', 'Bonnie-Bilt', 'derringer', 'steamer', 'oo gauge', '\\bcar\\b', 'nos rare Marx$', 'truck', 'caboose', 'tender', 'Linemar', 'Pullman', 'Lone Ranger'];
+    filter.excludeTerms = ['pistol', 'Jonny West', 'dairy', 'Bonnie-Bilt', 'derringer', 'steamer', 'oo gauge', '\\bcar\\b', 'truck', 'caboose', 'tender', 'Linemar', 'Pullman', 'Lone Ranger'];
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['fyrtoyboy', 'ceosis', 'fabboss7'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-18"; // Marx frontiersmen
-    filter.excludeTerms = ['action', 'classic recasts', 'ajax', 'ride.on', 'best of the west', 'nos rare Marx$', '11"'];
+    filter.excludeTerms = ['action', 'classic recasts', 'ajax', 'ride.on', 'best of the west', '11"'];
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['jeremybradshaw', 'mikes-6216', 'gitteriveramsn.com'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
     filter.searchName = "id-19"; // Marx horses
-    filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action', 'noble', 'Jane', 'Josie', 'moving', 'Gordon', 'MCML', 'gold knight', '\\bno Marx\\b', 'Big Jim', 'General Custer', '9”', ', Marx$', 'nos rare Marx$', 'Odin', 'Geronimo', 'viking', 'ride.on', 'lone ranger', 'sleeping beauty', 'johhny west', 'pony tail', 'play.?people', 'iron horse', 'ajax', 'comanche', 'Destiny', 'Bravo', '12"', '12”'];
+    filter.excludeTerms = ['Jonny West', '8"', 'Bonanza', 'Hartland', '\\btin\\b', 'ramp walker', '\\bcart\\b', 'action', 'noble', 'Jane', 'Josie', 'Sam Cobra', 'moving', 'Gordon', 'MCML', 'gold knight', '\\bno Marx\\b', 'Big Jim', 'General Custer', '9”', 'Odin', 'Geronimo', 'viking', 'ride.on', 'lone ranger', 'sleeping beauty', 'johhny west', 'pony tail', 'play.?people', 'iron horse', 'ajax', 'comanche', 'Destiny', 'Bravo', 'palomino', '12"', '12”'];
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(excludeTermssHorsesSaddles);
     filter.excludeSellers = ['northcedarsigns', 'tebur-8', 'gofigure66', 'woolrite', 'cruiser50', 'jeremiahmaxwell', 'c_beaudin', 'mikglava-0', 'd.c.silver', 'jjjjacjon', 'appanu60', 'spud8mh', 'martha66-2013'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
@@ -299,7 +307,8 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
-    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8', '\\bno Marx\\b', 'ajax', '12"', '12”', 'skate', 'Big Jim', 'nos rare Marx$', 'Jane West', 'Best of the West', 'Wildflower', 'police', 'whirling', 'windup', 'ring hand', 'Jamie West', '12 inch'];
+    filter.excludeTerms = ['lithographed', 'ramp', '\\bcar\\b', 'target', 'tebur-8', '\\bno Marx\\b', 'ajax', '12"', '12”', 'skate', 'Big Jim', 'Jane West', 'Best of the West', 'Wildflower', 'police', 'whirling', 'Jamie West', '12 inch'];
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['the\\*village\\*idiot', 'diniowa', 'chiefdocice'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     filter.excludeItemIDs = [174564762027, 284120067282, 184586469330, 154251838443, 402614585946, 224407617478, 224407616782, 384071950587];
@@ -307,7 +316,8 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-22"; // Marx pirates
-    filter.excludeTerms = ['sailor queen', 'pinball', 'Popeye', 'Rube Goldberg', 'ring.?hand', ', Marx$', 'nos rare Marx$', '12"'];
+    filter.excludeTerms = ['sailor queen', 'Popeye', 'Rube Goldberg', '12"'];
+    filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['robze_5', 'kayleyrose5', 'takeyouyard', 'vlauro', 'shortyrama', 'the\\*village\\*idiot', 'naftamost', 'ginapeet'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     filter.excludeItemIDs = [284128517199, 174573235948];
