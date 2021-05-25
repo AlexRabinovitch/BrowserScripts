@@ -23,29 +23,39 @@ var selectors = [];
 
 function fillSelectors()
 {
-        selectors.push({articleSelector:"div.layoutItem.strip-1150", indicatorSelector: ["div[class='havakIcon onImage']",
-                                                                                        "a[href*='z.ynet.co.il']",
+    selectors.push({articleSelector:"div.layoutItem.multi-article-images-1280-2", indicatorSelector: ["div:contains('Pplus')"]});
+    selectors.push({articleSelector:"div.layoutItem.multi-article-1280-2", indicatorSelector: ["a[href*='ynet.co.il/judaism']"]});
+    selectors.push({articleSelector:"div.layoutItem.multi-images-1280", indicatorSelector: ["div:contains('ועידות 2021')"]});
+    selectors.push({articleSelector:"div.MultiImagesMagazine", indicatorSelector: ["a[href*='ynet.co.il/laisha']"]});
+    selectors.push({articleSelector:"div.layoutItem.multi-article-top-1280", indicatorSelector: ["div:contains('אסטרולוגיה')",
+                                                                                                "a[href*='frogi.co.il/']",
+                                                                                                "a[href*='ynet.co.il/blazer']"]});
+    selectors.push({articleSelector:"div.layoutItem.strip-1150", indicatorSelector: ["div[class='havakIcon onImage']",
+                                                                                     "a[href*='z.ynet.co.il']",
+                                                                                     "a[href*='ynet.co.il/judaism']",
+                                                                                     "a[href*='ynet.co.il/laisha']",
+                                                                                     "a[href*='lps.ynet.co.il']"]});
+    selectors.push({articleSelector:"div.slotView", indicatorSelector: ["div[class='havakIcon onImage']",
+                                                                        "div[class='havakIcon onTextRow']",
+                                                                        "div[class='havakIcon onImage ']",
+                                                                        "div:contains('מייגן')",
+                                                                        "div:contains('קרדשיאן')",
+                                                                        "a[href*='pplus.ynet.co.il']",
+                                                                        "a[href*='xnet.ynet.co.il']",
+                                                                        "a[href*='ynet.co.il/judaism']",
+                                                                        "a[href*='ynet.co.il/dating']",
+                                                                        "a[href*='lps.ynet.co.il']"]});
+    //selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector: ["div:contains('Pplus')"]});
+    selectors.push({articleSelector:"div.layoutItem.multi-article-images", indicatorSelector: ["div:contains('Pplus')",
+                                                                                               "a[href*='benefits.yedioth.co.il']",
+                                                                                               "a[href*='ynet.co.il/activism/category/36572']",
+                                                                                               "a[href*='ynet.co.il/laisha']",
+                                                                                               "div:contains('+ynet')"]});
+    selectors.push({articleSelector:"div.layoutItem.multi-article", indicatorSelector: ["div:contains('אסטרולוגיה')",
+                                                                                        "a[href*='xnet.ynet.co.il']",
                                                                                         "a[href*='ynet.co.il/judaism']",
-                                                                                        "a[href*='ynet.co.il/laisha']",
-                                                                                        "a[href*='lps.ynet.co.il']"]});
-        selectors.push({articleSelector:"div.slotView", indicatorSelector: ["div[class='havakIcon onImage']",
-                                                                           "div[class='havakIcon onTextRow']",
-                                                                           "div:contains('מייגן')",
-                                                                           "div:contains('קרדשיאן')",
-                                                                           "a[href*='pplus.ynet.co.il']",
-                                                                           "a[href*='xnet.ynet.co.il']",
-                                                                           "a[href*='ynet.co.il/dating']",
-                                                                           "a[href*='lps.ynet.co.il']"]});
-        //selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector: ["div:contains('Pplus')"]});
-        selectors.push({articleSelector:"div.layoutItem.multi-article-images", indicatorSelector: ["div:contains('Pplus')",
-                                                                                                   "a[href*='benefits.yedioth.co.il']",
-                                                                                                   "a[href*='ynet.co.il/activism/category/36572']",
-                                                                                                   "a[href*='ynet.co.il/laisha']",
-                                                                                                   "div:contains('+ynet')"]});
-        selectors.push({articleSelector:"div.layoutItem.multi-article", indicatorSelector: ["div:contains('אסטרולוגיה')",
-                                                                                           "a[href*='xnet.ynet.co.il']",
-                                                                                           "a[href*='ynet.co.il/judaism']",
-                                                                                           "a[href*='ynet.co.il/dating']"]});
+                                                                                        "a[href*='frogi.co.il/']",
+                                                                                        "a[href*='ynet.co.il/dating']"]});
 }
 
 function findNodesAndClear()
