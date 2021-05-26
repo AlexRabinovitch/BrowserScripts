@@ -37,7 +37,8 @@ function fillSelectors()
                                                                                      "a[href*='lps.ynet.co.il']"]});
     selectors.push({articleSelector:"div.slotView", indicatorSelector: ["div[class='havakIcon onImage']",
                                                                         "div[class='havakIcon onTextRow']",
-                                                                        "div[class='havakIcon onImage ']",
+                                                                        "div[class*='havakIcon onImage']",
+                                                                        "div[class='havakIcon inTextDiv']",
                                                                         "div:contains('מייגן')",
                                                                         "div:contains('קרדשיאן')",
                                                                         "a[href*='pplus.ynet.co.il']",
