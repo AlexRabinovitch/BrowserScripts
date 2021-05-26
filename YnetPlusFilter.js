@@ -39,6 +39,7 @@ function fillSelectors()
                                                                         "div[class='havakIcon onTextRow']",
                                                                         "div[class*='havakIcon onImage']",
                                                                         "div[class='havakIcon inTextDiv']",
+                                                                        "div:contains('בשיתוף')",
                                                                         "div:contains('מייגן')",
                                                                         "div:contains('קרדשיאן')",
                                                                         "a[href*='pplus.ynet.co.il']",
