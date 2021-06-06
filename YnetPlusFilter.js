@@ -30,6 +30,8 @@ function fillSelectors()
     selectors.push({articleSelector:"div.layoutItem.multi-article-top-1280", indicatorSelector: ["div:contains('אסטרולוגיה')",
                                                                                                 "a[href*='frogi.co.il/']",
                                                                                                 "a[href*='ynet.co.il/blazer']"]});
+    selectors.push({articleSelector:"div.MultiArticleTopComponenta1280", indicatorSelector: ["div:contains('אופנה')",
+                                                                                            "div:contains('מעורבות')"]});
     selectors.push({articleSelector:"div.layoutItem.strip-1150", indicatorSelector: ["div[class='havakIcon onImage']",
                                                                                      "a[href*='z.ynet.co.il']",
                                                                                      "a[href*='ynet.co.il/judaism']",
@@ -46,6 +48,7 @@ function fillSelectors()
                                                                         "a[href*='xnet.ynet.co.il']",
                                                                         "a[href*='ynet.co.il/judaism']",
                                                                         "a[href*='ynet.co.il/dating']",
+                                                                        "a[href*='ynet.co.il/laisha']",
                                                                         "a[href*='lps.ynet.co.il']"]});
     //selectors.push({articleSelector:"div.MultiImagesComponenta.standart", indicatorSelector: ["div:contains('Pplus')"]});
     selectors.push({articleSelector:"div.layoutItem.multi-article-images", indicatorSelector: ["div:contains('Pplus')",
