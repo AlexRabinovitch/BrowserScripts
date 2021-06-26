@@ -1,0 +1,213 @@
+// ==UserScript==
+// @name         oper.ru filter
+// @namespace    https://tampermonkey.net/
+// @version      0.1
+// @description  Removes unwanted items
+// @author       Alex Rabinovitch
+// @match        https://oper.ru/*
+// @require      http://code.jquery.com/jquery-latest.js
+// @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
+var _filters = new Object();
+
+(function() {
+    'use strict';
+
+    try
+    {
+        fillFilters();
+    }
+    catch(e)
+    {
+        console.log('oper.ru filter error: ' + e.message);
+    }
+})();
+
+new MutationObserver(function(mutations)
+{
+    console.log('Mutations detected: ' + mutations.length);
+
+    for (var i = 0; i < mutations.length; i++)
+    {
+        var mutationAddedNodes = mutations[i].addedNodes;
+        for (var j = 0; j < mutationAddedNodes.length; j++)
+        {
+            var node = mutationAddedNodes[j];
+            if (node.tagName && node.tagName.toUpperCase() == "DT")
+            {
+                console.log('Node found');
+                processNode(node);
+            }
+        }
+    }
+
+}).observe(document, {childList: true, subtree: true});
+
+document.onreadystatechange = () =>
+{
+    if (document.readyState === 'complete')
+    {
+        console.log('Document ready');
+
+        var nodes = document.querySelectorAll('dt');
+
+        //console.log('Nodes length: ' + nodes.length);
+
+        for(var i = 0; i < nodes.length; i++)
+        {
+            processNode(nodes[i]);
+        }
+    }
+};
+
+function processNode(headerNode)
+{
+    var isAllowed = checkHeader(headerNode);
+
+    if(isAllowed == "true")
+    {
+        return;
+    }
+    else
+    {
+        var bodyNode;
+        console.log('Going to get body...');
+        bodyNode = getBody(headerNode);
+
+        if(bodyNode != null)
+        {
+            if(isAllowed == "false")
+            {
+                console.log('Going to remove body...');
+                bodyNode.remove();
+                headerNode.remove();
+            }
+            else
+            {
+                console.log('Going to check body...');
+                var res = checkBody(bodyNode);
+                console.log('res: ' + res);
+                if(!res)
+                {
+                    bodyNode.remove();
+                    headerNode.remove();
+                }
+            }
+        }
+    }
+}
+
+function getBody(headerNode)
+{
+    var bodyNode = headerNode.nextSibling;
+    console.log('Next sibling: ' + bodyNode.nodeName);
+    if (bodyNode.nodeName && bodyNode.nodeName.toUpperCase() == "#TEXT")
+    {
+        bodyNode = bodyNode.nextSibling;
+    }
+    if (bodyNode.nodeName && bodyNode.nodeName.toUpperCase() == "DD")
+    {
+        console.log('Body node found');
+
+        return bodyNode;
+    }
+    console.log('Body node not found');
+    return null;
+}
+
+function checkHeader(node)
+{
+    var titles = node.querySelectorAll('a');
+    var title = '';
+    if(titles && titles.length > 0)
+    {
+        title = titles[0].innerText;
+        console.log('Title found: ' + title);
+
+        var regex = new RegExp(_filters.AlwaysAllow.Headers.join("|"), "i");
+        if(regex.test(title))
+        {
+            return "true";
+        }
+
+        regex = new RegExp(_filters.AlwaysBlock.Headers.join("|"), "i");
+        console.log('regex: ' + regex);
+
+        if(regex.test(title))
+        {
+            console.log('Header to block found: ' + title);
+            return "false";
+        }
+    }
+    return "unknown";
+}
+
+function checkBody(node)
+{
+    try
+    {
+        var jroot = $(node);
+        //console.log('jroot: ' + jroot.html());
+        var items = jroot.find('a.comments');
+
+        console.log('Items found: ' + items.length);
+
+        for(var i = 0; i < items.length; i++)
+        {
+            var item = items[i];
+            var itemText = $(item).text();
+            console.log('itemText: ' + itemText);
+
+            if(checkItemText(itemText, _filters.AlwaysAllow.Users))
+            {
+                return true;
+            }
+            if(checkItemText(itemText, _filters.AlwaysBlock.Users))
+            {
+                return false;
+            }
+            if(checkItemText(itemText, _filters.AlwaysBlock.Topics))
+            {
+                return false;
+            }
+        }
+    }
+    catch(e)
+    {
+        console.log('Error: ' + e.message);
+    }
+
+    return true;
+}
+
+function checkItemText(itemText, filterValues)
+{
+    for(var i = 0; i < filterValues.length; i++)
+    {
+        if(itemText == filterValues[i])
+        {
+            return true;
+        }
+    }
+}
+
+function fillFilters()
+{
+    console.log('Filling filters...');
+
+    var alwaysAllow = new Object();
+    alwaysAllow.Headers = ['Егор.*?Яковлев', 'Клим.*?Жуков', 'Синий Фил', 'Изолента'];
+    alwaysAllow.Users = ['egoryakovlev', 'Zhukoff'];
+    _filters.AlwaysAllow = alwaysAllow;
+
+    var alwaysBlock = new Object();
+    alwaysBlock.Headers = ['Надан.*?Фридрихсон', 'Во все тяжкие', 'Уралов', 'Помощь детям Донецка'];
+    alwaysBlock.Users = ['redacteur'];
+    alwaysBlock.Topics = ['Это ПЕАР'];
+    _filters.AlwaysBlock = alwaysBlock;
+
+    console.log('Done filling filters.');
+}
