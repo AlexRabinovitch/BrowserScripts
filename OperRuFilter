@@ -127,19 +127,19 @@ function checkHeader(node)
         title = titles[0].innerText;
         console.log('Title found: ' + title);
 
-        var regex = new RegExp(_filters.AlwaysAllow.Headers.join("|"), "i");
-        if(regex.test(title))
-        {
-            return "true";
-        }
-
-        regex = new RegExp(_filters.AlwaysBlock.Headers.join("|"), "i");
+        var regex = new RegExp(_filters.AlwaysBlock.Headers.join("|"), 'i');
         console.log('regex: ' + regex);
 
         if(regex.test(title))
         {
             console.log('Header to block found: ' + title);
             return "false";
+        }
+
+        regex = new RegExp(_filters.AlwaysAllow.Headers.join("|"), 'i');
+        if(regex.test(title))
+        {
+            return "true";
         }
     }
     return "unknown";
@@ -155,16 +155,29 @@ function checkBody(node)
 
         console.log('Items found: ' + items.length);
 
+        var bodyText = node.innerText;
+        //console.log('Body text: ' + bodyText);
+
+        var regex = new RegExp(_filters.AlwaysBlock.Keywords.join("|"), 'im');
+
+        if(regex.test(bodyText))
+        {
+            //console.log('Content to block found: ' + bodyText);
+            return false;
+        }
+
+        regex = new RegExp(_filters.AlwaysAllow.Keywords.join("|"), 'im');
+        if(regex.test(bodyText))
+        {
+            return true;
+        }
+
         for(var i = 0; i < items.length; i++)
         {
             var item = items[i];
             var itemText = $(item).text();
             console.log('itemText: ' + itemText);
 
-            if(checkItemText(itemText, _filters.AlwaysAllow.Users))
-            {
-                return true;
-            }
             if(checkItemText(itemText, _filters.AlwaysBlock.Users))
             {
                 return false;
@@ -173,7 +186,27 @@ function checkBody(node)
             {
                 return false;
             }
+            if(checkItemText(itemText, _filters.AlwaysAllow.Users))
+            {
+                return true;
+            }
         }
+        items = jroot.find('a');
+
+        console.log('A items found: ' + items.length);
+
+        /*for(i = 0; i < items.length; i++)
+        {
+            item = items[i];
+            itemText = $(item).text();
+            console.log('itemText: ' + itemText);
+
+            if(regex.test(itemText))
+            {
+                console.log('Content to block found: ' + itemText);
+                return false;
+            }
+        }*/
     }
     catch(e)
     {
@@ -199,14 +232,16 @@ function fillFilters()
     console.log('Filling filters...');
 
     var alwaysAllow = new Object();
-    alwaysAllow.Headers = ['Егор.*?Яковлев', 'Клим.*?Жуков', 'Синий Фил', 'Изолента'];
+    alwaysAllow.Headers = ['Егор.*?Яковлев', '^(?!.*?Breaking Bad)(?!.*?Реми Майснер).*?Клим.*?Жуков', 'Владимир.*?Неволин', 'Синий Фил', 'Изолента'];
     alwaysAllow.Users = ['egoryakovlev', 'Zhukoff'];
+    alwaysAllow.Keywords = ['Шекспир плачет'];
     _filters.AlwaysAllow = alwaysAllow;
 
     var alwaysBlock = new Object();
-    alwaysBlock.Headers = ['Надан.*?Фридрихсон', 'Во все тяжкие', 'Уралов', 'Помощь детям Донецка'];
-    alwaysBlock.Users = ['redacteur'];
-    alwaysBlock.Topics = ['Это ПЕАР'];
+    alwaysBlock.Headers = ['Надан.*?Фридрихсон', 'Вероник.*?Крашенинников', 'Во все тяжкие', 'Breaking Bad', 'Уралов', 'Помощь детям .*Донецка', 'Реми Майснер', 'Михаил.*?Фадеев', 'Зулейха', 'Эффект Доплера', 'Арктик', 'Солженицын'];
+    alwaysBlock.Users = ['redacteur', 'Onepamop', 'реклама'];
+    alwaysBlock.Topics = ['Это ПЕАР', 'Железки'];
+    alwaysBlock.Keywords = ['Уралов', '^Скидка', '^Распродажа', 'Арктик'];
     _filters.AlwaysBlock = alwaysBlock;
 
     console.log('Done filling filters.');
