@@ -5,6 +5,7 @@
 // @description  Removes unwanted items
 // @author       Alex Rabinovitch
 // @match        https://www.ebay.com/sch/i.html*
+// @match        https://www.ebay.de/sch/i.html*
 // @require      http://code.jquery.com/jquery-latest.js
 // @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @run-at       document-start
