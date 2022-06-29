@@ -33,7 +33,7 @@ var _filters = new Object();
 
 new MutationObserver(function(mutations)
 {
-    console.log('Mutations detected: ' + mutations.length);
+    //console.log('Mutations detected: ' + mutations.length);
 
     var filter = getFilter(this);
 
@@ -161,6 +161,26 @@ function processNode(node, filter)
                 }
             }
         }
+        if(filter.excludeCountries)
+        {
+            var countries = node.querySelectorAll('span.s-item__location.s-item__itemLocation');
+            console.log('Countries found: ' + countries.length);
+
+            var country = '';
+            if(countries && countries.length > 0)
+            {
+                country = countries[0].innerText;
+                console.log('Processing country: ' + country);
+
+                regex = new RegExp(filter.excludeCountries.join("|"), "i");
+                if(regex.test(country))
+                {
+                    console.log('Country match found: ' + country);
+                    node.remove();
+                    return;
+                }
+            }
+        }
         if(filter.excludeItemIDs)
         {
             var itemIDs = node.querySelectorAll('span.s-item__item-id.s-item__itemID');
@@ -185,7 +205,7 @@ function fillFilters()
 {
     console.log('Filling filters...');
 
-    var inch456 = ['\\b6.?"', '6”', "6''", '6.?inch', 'six inch',
+var inch456 = ['\\b6.?"', '6”', "6''", '6.?inch', 'six inch',
                         '5.?"', '5”', "5''", '5.?inch', 'five inch',
                         '5 1/2.?"', '5 1/2”', "5 1/2''", '5 1/2.?inch', 'five 1/2 inch',
                         '4.?"', '4”', "4''", '4.?inch', 'four inch',
@@ -201,6 +221,8 @@ function fillFilters()
 
     var excludeSellersHorsesSaddles = ['apeman28', 'recordsiam7', 'rugbychick12', 'gypwop', 'kandeekane13'];
     var excludeTermssHorsesSaddles = ['Pa?o?ncho', 'Marvel', 'Valou?r', 'joint', 'articulated', 'Valiant', 'Breyer', '13.5"'];
+
+    var commonExcludeCountries = ['China'];
 
     var filter = new Object();
     filter.searchName = "id-1"; // 4, 5, 6 inch cowboys and indians
@@ -227,6 +249,7 @@ function fillFilters()
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['denyakim', 'ourfinds', 'northstate', 'labellesassy', 'happinessfund', 'grg.store', 'yannis1960grvtg', 'mercator_trading'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
+    filter.excludeCountries = commonExcludeCountries;
     filter.complexTerms = [];
     filter.complexTerms.push(buildComplexTermsFilter(['payton', 'ajax', 'mpc', '\\brel\\b', 'bergen', 'beton', 'tim.?mee'], ['marx']));
     _filters[filter.searchName] = filter;
