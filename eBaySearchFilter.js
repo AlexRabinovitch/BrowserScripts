@@ -130,75 +130,90 @@ function processNode(node, filter)
                 return;
             }
         }
-        if(filter.complexTerms)
+
+        if(processComplexTerms(filter, node, title))
         {
-            for(var i = 0; i < filter.complexTerms.length; i++)
-            {
-                regex = new RegExp(filter.complexTerms[i], "i");
-                if(regex.test(title))
-                {
-                    console.log('Title match found: ' + title);
-                    node.remove();
-                    return;
-                }
-            }
+            return;
         }
-        if(filter.excludeSellers)
-        {
-            var sellers = node.querySelectorAll('span.s-item__seller-info-text');
-            var seller = '';
-            if(sellers && sellers.length > 0)
-            {
-                seller = sellers[0].innerText;
-                console.log('Seller found: ' + seller);
 
-                regex = new RegExp(filter.excludeSellers.join("|"), "i");
-                if(regex.test(seller))
-                {
-                    console.log('Seller match found: ' + seller);
-                    node.remove();
-                    return;
-                }
-            }
+        if(processSellers(filter, node))
+        {
+            return;
         }
-        if(filter.excludeCountries)
+
+        if(processCountries(filter, node))
         {
-            var countries = node.querySelectorAll('span.s-item__location.s-item__itemLocation');
-            console.log('Countries found: ' + countries.length);
-
-            var country = '';
-            if(countries && countries.length > 0)
-            {
-                country = countries[0].innerText;
-                console.log('Processing country: ' + country);
-
-                regex = new RegExp(filter.excludeCountries.join("|"), "i");
-                if(regex.test(country))
-                {
-                    console.log('Country match found: ' + country);
-                    node.remove();
-                    return;
-                }
-            }
+            return;
         }
-        if(filter.excludeItemIDs)
-        {
-            var itemIDs = node.querySelectorAll('span.s-item__item-id.s-item__itemID');
-            var itemID = '';
-            if(itemIDs && itemIDs.length > 0)
-            {
-                itemID = itemIDs[0].innerText;
 
-                regex = new RegExp(filter.excludeItemIDs.join("|"), "i");
-                if(regex.test(itemID))
-                {
-                    console.log('Item ID match found: ' + itemID);
-                    node.remove();
-                    return;
-                }
+        if(processItemIDs(filter, node))
+        {
+            return;
+        }
+    }
+}
+
+function processComplexTerms(filter, node, title)
+{
+    if(filter.complexTerms)
+    {
+        var regex;
+        for(var i = 0; i < filter.complexTerms.length; i++)
+        {
+            regex = new RegExp(filter.complexTerms[i], "i");
+            if(processItem(node, title, regex, 'Title'))
+            {
+                return true;
             }
         }
     }
+    return false;
+}
+
+function processSellers(filter, node)
+{
+    processNonTitleItems(filter.excludeCountries, node, 'span.s-item__seller-info-text', 'Seller');
+}
+
+function processCountries(filter, node)
+{
+    processNonTitleItems(filter.excludeCountries, node, 'span.s-item__location.s-item__itemLocation', 'Country');
+}
+
+function processItemIDs(filter, node)
+{
+    processNonTitleItems(filter.excludeItemIDs, node, 'span.s-item__item-id.s-item__itemID', 'ItemID');
+}
+
+function processNonTitleItems(itemFilter, node, selector, itemName)
+{
+    if(itemFilter)
+    {
+        var items = node.querySelectorAll(selector);
+        console.log(itemName + ' found: ' + items.length);
+
+        var item = '';
+        if(items && items.length > 0)
+        {
+            item = items[0].innerText;
+            console.log('Processing ' + itemName + ': ' + item);
+
+            var regex = new RegExp(itemFilter.join("|"), "i");
+            return processItem(node, item, regex, itemName);
+        }
+    }
+    return false;
+}
+
+function processItem(node, item, regex, itemName)
+{
+    if(regex.test(item))
+    {
+        console.log(itemName + ' match found: ' + item);
+        node.remove();
+        return true;
+    }
+    return false;
 }
 
 function fillFilters()
