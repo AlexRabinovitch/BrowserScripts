@@ -110,25 +110,14 @@ function processNode(node, filter)
         }
         console.log('Title found: ' + title);
 
-        if(filter.mustTerms)
+        if(processMustTerms(filter, node, title))
         {
-            var regex = new RegExp("^((?!" + filter.mustTerms.join("|") + ").)*$", "i");
-            if(regex.test(title))
-            {
-                console.log('Title match found: ' + title);
-                node.remove();
-                return;
-            }
+            return;
         }
-        if(filter.excludeTerms)
+
+        if(processExcludeTerms(filter, node, title))
         {
-            regex = new RegExp(filter.excludeTerms.join("|"), "i");
-            if(regex.test(title))
-            {
-                console.log('Title match found: ' + title);
-                node.remove();
-                return;
-            }
+            return;
         }
 
         if(processComplexTerms(filter, node, title))
@@ -153,6 +142,34 @@ function processNode(node, filter)
     }
 }
 
+function processMustTerms(filter, node, title)
+{
+    if(filter.mustTerms)
+    {
+        var regex = new RegExp("^((?!" + filter.mustTerms.join("|") + ").)*$", "i");
+        if(regex.test(title))
+        {
+            console.log('Title match found: ' + title);
+            node.remove();
+            return true;
+        }
+    }
+    return false;
+}
+
+function processExcludeTerms(filter, node, title)
+{
+    if(filter.excludeTerms)
+    {
+        var regex = new RegExp(filter.excludeTerms.join("|"), "i");
+        if(processItem(node, title, regex, 'Title'))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 function processComplexTerms(filter, node, title)
 {
     if(filter.complexTerms)
@@ -172,17 +189,17 @@ function processComplexTerms(filter, node, title)
 
 function processSellers(filter, node)
 {
-    processNonTitleItems(filter.excludeCountries, node, 'span.s-item__seller-info-text', 'Seller');
+    return processNonTitleItems(filter.excludeCountries, node, 'span.s-item__seller-info-text', 'Seller');
 }
 
 function processCountries(filter, node)
 {
-    processNonTitleItems(filter.excludeCountries, node, 'span.s-item__location.s-item__itemLocation', 'Country');
+    return processNonTitleItems(filter.excludeCountries, node, 'span.s-item__location.s-item__itemLocation', 'Country');
 }
 
 function processItemIDs(filter, node)
 {
-    processNonTitleItems(filter.excludeItemIDs, node, 'span.s-item__item-id.s-item__itemID', 'ItemID');
+    return processNonTitleItems(filter.excludeItemIDs, node, 'span.s-item__item-id.s-item__itemID', 'ItemID');
 }
 
 function processNonTitleItems(itemFilter, node, selector, itemName)
