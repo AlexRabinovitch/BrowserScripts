@@ -147,12 +147,7 @@ function processMustTerms(filter, node, title)
     if(filter.mustTerms)
     {
         var regex = new RegExp("^((?!" + filter.mustTerms.join("|") + ").)*$", "i");
-        if(regex.test(title))
-        {
-            console.log('Title match found: ' + title);
-            node.remove();
-            return true;
-        }
+        return processItem(node, title, regex, 'Title');
     }
     return false;
 }
@@ -162,10 +157,7 @@ function processExcludeTerms(filter, node, title)
     if(filter.excludeTerms)
     {
         var regex = new RegExp(filter.excludeTerms.join("|"), "i");
-        if(processItem(node, title, regex, 'Title'))
-        {
-            return true;
-        }
+        return processItem(node, title, regex, 'Title');
     }
     return false;
 }
