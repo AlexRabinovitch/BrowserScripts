@@ -181,7 +181,7 @@ function processComplexTerms(filter, node, title)
 
 function processSellers(filter, node)
 {
-    return processNonTitleItems(filter.excludeCountries, node, 'span.s-item__seller-info-text', 'Seller');
+    return processNonTitleItems(filter.excludeSellers, node, 'span.s-item__seller-info-text', 'Seller');
 }
 
 function processCountries(filter, node)
@@ -206,6 +206,7 @@ function processNonTitleItems(itemFilter, node, selector, itemName)
         {
             item = items[0].innerText;
             console.log('Processing ' + itemName + ': ' + item);
+            console.log('Filter: ' + itemFilter.join("|"));
 
             var regex = new RegExp(itemFilter.join("|"), "i");
             return processItem(node, item, regex, itemName);
@@ -271,7 +272,7 @@ function fillFilters()
     filter.searchName = "id-3"; // mounted cowboys and indians
     filter.excludeTerms = ['Tradition', 'Trophy Miniatures', 'Traditional Models', 'nursery', 'wooden', 'halloween', 'mvp', 'hot wheels', 'Barclay', 'Manoil', 'Geobra', 'motorcycle', 'outfit', 'Safari', 'Schleich', 'paddle', 'elephant', 'token', 'Indian army', 'Woody', 'jacket', 'drum', 'child', 'lionel', 'horseshoe', 'folk art', 'mutiny', 'holster', 'stuffed', 'board game', '\\btin\\b', 'Star Ace', 'Hopalong', 'composition', 'country', 'Atkins', 'Bravestar', 'flock', 'legends', 'stencil', 'ducky', 'Peppa pig', 'hotwheels', 'cowboy hat', 'cowboy boot', 'domino', 'mechanical', 'card', 'yo.?yo', 'W Britain', 'britain\'?s?', 'purse', 'wallet', 'Roll Call', 'velvet', 'blind', 'clip.*?clop', 'stick', 'space', 'Hoefler', 'buckle', 'scarf', 'ponywars', 'frogz', 'roadrider', 'schylling', 'chap mei', 'giant', 'boot hill', 'GMT', 'forged', 'First Legion', 'handcraft', 'master box', 'playmate', 'toy story', 'canteen', 'Kingcast', 'Frontline Figures', 'douglas', 'sikh', 'minifig', 'threeA', '1/48', '1/72', '1/76', '28.?mm', '10”', '1:6', '1/6', '1"', '12”'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
-    filter.excludeSellers = ['denyakim', 'ourfinds', 'northstate', 'labellesassy', 'happinessfund', 'grg.store', 'yannis1960grvtg', 'mercator_trading'];
+    filter.excludeSellers = ['denyakim', 'ourfinds', 'northstate', 'labellesassy', 'happinessfund', 'grg.store', 'yannis1960grvtg', 'mercator_trading', 'rustybargainwarehouse'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     filter.excludeCountries = commonExcludeCountries;
     filter.complexTerms = [];
