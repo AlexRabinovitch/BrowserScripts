@@ -241,7 +241,7 @@ function fillFilters()
 
     var commonExcludedSellers = ['gtohall', 'bhall0415', ' alamo3636', 'laparkamania', 'softball-1baseball-2', 'jonsmemorabiliamart64', 'picker_picker', 'oldfartcollections', 'annfrei_12', 'luckynickels', 'griff2299', 'sstoys2', 'kvik_567', 'mirthunder', 'brcli_25', 'kerrlindle0', 'crash29', 'janerose2014', 'softviking', 'tbt', 'davenportpm1', 'leopardlover48', 'www.telecoin.bizland.com', 'infernal_devices', '2rosesathome', 'j_byers_24', 'the\\*village\\*idiot', 'vintagestg', 'littletoymaker', 'realbricks', 'goatsonparade17023', 'alysunwonderland', 'tin-toyman', 'jhsmith400', 'cumberlandborn'];
     var commonExcludedTerms = ['(Joh?h?n?ny|Johnnie|Jane|Jamie|Jimmy|Josie|Jay) West', 'Sam Cobra', 'Best of (the )?West', 'BOTW', 'Ready Gang', 'movable', 'Legends of (the )?West', 'cherokee', 'Be[bp]op', 'cap.?gun', '\\bw(ind)?.?up\\b', 'ring.?hand', 'pin.?ball', 'jigsaw', 'puzzle', 'Barclay', 'Manoil', 'pl?ay.?mobil', 'play.?skool', 'play.?people', 'Lincoln.*?log', 'friction', 'ajax', '\\bdolls?\\b', 'ram.?p.?walk', 'Bravo', '\\bH(O|0)\\b', 'HO scale', 'Hasbro', '\\bmarble(s)\\b', 'swirl', 'jabo', 'celluloid', 'harmonica', 'plush', 'navwar', 'giant brand', 'Tonka', 'POST.?CARD', 'swoppet?d?', 'swivel', 'moo mesa', 'marchon', 'little.?people', 'gbpv', 'Popeye', 'Fisc?her.?Price', 'Bonanza', 'clock.?work', '\\bpull.?toy\\b', '\\btin.?plate\\b', 'critter', 'Pullman', 'puppet'];
-    var marxExcludedTerms = ['fortune', 'Gabriel', 'sleeping beauty', '\\bno Marx\\b', 'nos rare Marx$', ', Marx$', 'Marx!!!$', 'Marx-U', 'marx style', 'Marx.?\\?', 'marx( toys)? \\(\\?\\)', 'good with marx', 'replicants', 'MPC', 'tim.?mee', 'Linemar', 'Karl Marx', 'Engels', 'Spencer', 'Barzso', 'Schaffner', 'Richard Marx', 'Marx brothers'];
+    var marxExcludedTerms = ['fortune', 'Gabriel', 'sleeping beauty', '\\bno Marx\\b', 'nos rare Marx$', ', Marx$', 'Marx!!!$', 'Marx-U', 'marx style', 'Marx.?\\?', 'marx( toys)? \\(\\?\\)', 'good with marx', 'replicants', 'MPC', 'tim.?mee', 'Linemar', 'Karl Marx', 'Engels', 'Spencer', 'Barzso', 'Schaffner', 'Richard Marx', 'Marx brothers', 'Maddox', 'Garret'];
     var marxExcludedSellers = ['amawill-3200', 'supersmileygerry', 'lewiq', ' 2010waltb', 'avalerina', 'chrislach1', 'zuber', 'diets-r-us', 'iamthepumpkinking', 'winston49120', 'classic_plastick', 'pezdudewelch'];
 
     var excludeSellersHorsesSaddles = ['apeman28', 'recordsiam7', 'rugbychick12', 'gypwop', 'kandeekane13'];
@@ -310,7 +310,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-9"; // Auburn
+    filter.searchName = "id-9"; // Auburn //worldwide auburn (cowboy,cowboys,indian,indians,frontiersman,frontiersmen,frontier,pioneer,pioneers,horse,horses) -("western models",shoe,shoes,horseshoe,police,farm,"rubber axe","id-9")
     filter.excludeTerms = ['Kusan', 'hammer', 'motorcycle', 'hatchet'];
     _filters[filter.searchName] = filter;
 
@@ -332,7 +332,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-12"; // Ideal knights
+    filter.searchName = "id-12"; // Ideal knights // ideal (knight,knights) -(slot,batman,galahad,ingrid,"star team",darkness,tcr,trap,cutoff,"id-12")
     filter.excludeTerms = ['ideal stocking', '\\bmetal\\b','ideal for','ideal 4', 'ideal.*gift', 'board game', 'knight rider', '1/62'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['tomson162'];
@@ -388,7 +388,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-22"; // Marx pirates
+    filter.searchName = "id-22"; // Marx pirates // worldwide // marx (pirate,pirates) -("ramp walker","johnny west","id-22")
     filter.excludeTerms = ['sailor queen', 'Goldberg', 'American fighter'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -412,7 +412,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-24"; // Marx vikings
+    filter.searchName = "id-24"; // Marx vikings // worldwide // marx (viking,vikings) -(odin,sir,"johnny west","karl marx",cxr,"1/6","12"") -(brave,"erik the viking","eric the viking","id-24"))
     filter.excludeTerms = ['nodding', 'diedhoff', 'Erik', '11 1/4'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
