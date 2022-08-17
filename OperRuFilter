@@ -238,10 +238,10 @@ function fillFilters()
     _filters.AlwaysAllow = alwaysAllow;
 
     var alwaysBlock = new Object();
-    alwaysBlock.Headers = ['Надан.*?Фридрихсон', 'Вероник.*?Крашенинников', 'Во все тяжкие', 'Breaking Bad', 'Уралов', 'Помощь детям .*Донецка', 'Реми Майснер', 'Михаил.*?Фадеев', 'Зулейха', 'Эффект Доплера', 'Арктик', 'Солженицын'];
+    alwaysBlock.Headers = ['Надан.*?Фридрихсон', 'Вероник.*?Крашенинников', 'Во все тяжкие', 'Breaking Bad', 'Уралов', 'Помощь детям .*Донецка', 'Реми Майснер', 'Михаил.*?Фадеев', 'Зулейха', 'Эффект Доплера', 'Арктик', 'Солженицын', 'в переводе Гоблина', 'Вечерний Излучатель'];
     alwaysBlock.Users = ['redacteur', 'Onepamop', 'реклама'];
     alwaysBlock.Topics = ['Это ПЕАР', 'Железки'];
-    alwaysBlock.Keywords = ['Уралов', '^Скидка', '^Распродажа', 'Арктик'];
+    alwaysBlock.Keywords = ['Арктик'];//'Уралов', '^Скидка', '^Распродажа',
     _filters.AlwaysBlock = alwaysBlock;
 
     console.log('Done filling filters.');
