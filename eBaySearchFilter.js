@@ -230,17 +230,21 @@ function fillFilters()
 {
     console.log('Filling filters...');
 
-    var inch456 = ['\\b6.?"', '6”', "6''", '6.?inch', 'six inch',
+    var inch456 = ['\\b(6|six)( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)',
+                   '\\b(5|five)( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)',
+                   '\\b(4|four)( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)'
+                   /*,
+                   \\b6.?"', '6”', "6''", '6.?inch', 'six inch'
                         '5.?"', '5”', "5''", '5.?inch', 'five inch',
                         '5 1/2.?"', '5 1/2”', "5 1/2''", '5 1/2.?inch', 'five 1/2 inch',
-                        '4.?"', '4”', "4''", '4.?inch', 'four inch',
-                        '4 1/2.?"', '4 1/2”', "4 1/2''", '4 1/2.?inch', 'four 1/2 inch',
+                        '\\b4.?"', '\\b4”', "4''", '4.?inch', 'four inch',
+                        '4 1/2.?"', '4 1/2”', "4 1/2''", '4 1/2.?inch', 'four 1/2 inch',*/
                         ];
 
     var inch456Exclude = ['crescent', 'payton', 'duck', 'bend', 'Squishmallows', 'drum', 'bendable', '\\bpee', '(doctor|dr) who', 'rescue', 'dime novel', 'taxi', 'leather', 'lanard', 'Space Jam', '\\bnba\\b', '1 1/4"', '1.5"', '1 3/4"', '2 1/4', '2.5”', '2 3/4"', '2-1/4', '2 1/4"', '2.5”', '2-3/4"', '2 3/4', '2.75"', '1:12', '1/12', '8 3/4"', '12.5"'];
 
     var commonExcludedSellers = ['gtohall', 'bhall0415', ' alamo3636', 'laparkamania', 'softball-1baseball-2', 'jonsmemorabiliamart64', 'picker_picker', 'oldfartcollections', 'annfrei_12', 'luckynickels', 'griff2299', 'sstoys2', 'kvik_567', 'mirthunder', 'brcli_25', 'kerrlindle0', 'crash29', 'janerose2014', 'softviking', 'tbt', 'davenportpm1', 'leopardlover48', 'www.telecoin.bizland.com', 'infernal_devices', '2rosesathome', 'j_byers_24', 'the\\*village\\*idiot', 'vintagestg', 'littletoymaker', 'realbricks', 'goatsonparade17023', 'alysunwonderland', 'tin-toyman', 'jhsmith400', 'cumberlandborn'];
-    var commonExcludedTerms = ['(Joh?h?n?ny|Johnnie|Jane|Jamie|Jimmy|Josie|Jay) West', 'Sam Cobra', 'Best of (the )?West', 'BOTW', 'Ready Gang', 'movable', 'Legends of (the )?West', 'cherokee', 'Be[bp]op', 'cap.?gun', '\\bw(ind)?.?up\\b', 'ring.?hand', 'pin.?ball', 'jigsaw', 'puzzle', 'Barclay', 'Manoil', 'pl?ay.?mobil', 'play.?skool', 'play.?people', 'Lincoln.*?log', 'friction', 'ajax', '\\bdolls?\\b', 'ram.?p.?walk', 'Bravo', '\\bH(O|0)\\b', 'HO scale', 'Hasbro', '\\bmarble(s)\\b', 'swirl', 'jabo', 'celluloid', 'harmonica', 'plush', 'navwar', 'giant brand', 'Tonka', 'POST.?CARD', 'swoppet?d?', 'swivel', 'moo mesa', 'marchon', 'little.?people', 'gbpv', 'Popeye', 'Fisc?her.?Price', 'Bonanza', 'clock.?work', '\\bpull.?toy\\b', '\\btin.?plate\\b', 'critter', 'Pullman', 'puppet'];
+    var commonExcludedTerms = ['(Joh?h?n?ny|Johnnie|Jane|Jamie|Jimmy|Josie|Jay) West', 'Sam Cobra', 'Best of (the )?West', 'BOTW', 'Ready Gang', 'movable', 'Legends of (the )?West', 'cherokee', 'Be[bp]op', 'cap.?gun', '\\bw(ind)?.?up\\b', 'ring.?hand', 'pin.?ball', 'jigsaw', 'puzzle', 'Barclay', 'Manoil', 'pl?ay.?mobil', 'play.?skool', 'play.?people', 'Lincoln.*?log', 'friction', 'ajax', '\\bdolls?\\b', 'ram.?p.?walk', 'Bravo', '\\bH(O|0)\\b', 'HO scale', 'Hasbro', '\\bmarble(s)\\b', 'swirl', 'jabo', 'celluloid', 'harmonica', 'plush', 'navwar', 'giant brand', 'Tonka', 'POST.?CARD', 'swoppet?d?', 'swivel', 'moo mesa', 'marchon', 'little.?people', 'gbpv', 'Popeye', 'Fisc?her.?Price', 'Bonanza', 'clock.?work', '\\bpull.?toy\\b', '\\btin.?plate\\b', 'critter', 'Pullman', 'puppet', 'Mickey Mouse'];
     var marxExcludedTerms = ['fortune', 'Gabriel', 'sleeping beauty', '\\bno Marx\\b', 'nos rare Marx$', ', Marx$', 'Marx!!!$', 'Marx-U', 'marx style', 'Marx.?\\?', 'marx( toys)? \\(\\?\\)', 'good with marx', 'replicants', 'MPC', 'tim.?mee', 'Linemar', 'Karl Marx', 'Engels', 'Spencer', 'Barzso', 'Schaffner', 'Richard Marx', 'Marx brothers', 'Maddox', 'Garret'];
     var marxExcludedSellers = ['amawill-3200', 'supersmileygerry', 'lewiq', ' 2010waltb', 'avalerina', 'chrislach1', 'zuber', 'diets-r-us', 'iamthepumpkinking', 'winston49120', 'classic_plastick', 'pezdudewelch'];
 
@@ -316,7 +320,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-10"; // Elastolin
-    filter.excludeTerms = ['ground', 'british', '\\bgerman\\b', 'composée', 'composit','compo', '\\bmasse?\\b', 'massesoldat', 'masse.?figur', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung', 'Clairet', 'massebäume', '^elastolin$', 'elfer raus', 'turk', 'ww1', 'revolution', 'pre war', 'not elastolin', 'non elastolin', 'Africa', '1930s', 'trooper', '\\bcow\\b', '\\bband\\b', 'janestkzi', 'prussian', 'railway', 'reamsa', 'jecsan', 'lansquenet', 'landsknecht', '\\bfaro\\b', 'animal', 'military', 'giraffe', 'mercenary?(ies)?', 'doughboy', '\\bdeer', '\\bboa\\b', 'tiger', '\\blion', '\\bzoo\\b', '\\bbear\\b', 'monkey', 'ostrich', 'rhino', 'wolf', 'panther', 'zebra', 'type elastolin', '\\b19[01234]\\d', 'prewar', 'Steckfigur', 'socket', 'regiment', 'grenadier', 'lafredo', 'M[aä]rklin', 'elastolin compatible', 'compatible with elastolin', 'elastolin\\?', '(suitable|matching|fits) (for|to) Elastolin', '\\blead\\b', 'ADVERTISING Brands', 'luftwaffe', 'mussolini', 'diedhoff', 'quiralu', 'blechräder', 'air france', 'advertising', 'plug', 'nativity', 'ww2', 'wwii', '5.6cm', '1\\:72', 'CM 4', '\\b1 5\\/8', '\\b1 3\\/4', '1/50', '1.5 Inch'];
+    filter.excludeTerms = ['ground', 'british', '\\bgerman\\b', 'composée', 'composit','compo', '\\bmasse?\\b', 'massesoldat', 'masse.?figur', 'French', '7th', 'Allemand', 'Civil war', 'Zusammensetzung', 'Clairet', 'massebäume', '^elastolin$', 'elfer raus', 'turk', 'ww1', 'revolution', 'pre war', 'not elastolin', 'non elastolin', 'Africa', '1930s', 'trooper', '\\bcow\\b', '\\bband\\b', 'janestkzi', 'prussian', 'railway', 'reamsa', 'jecsan', 'lansquenet', 'landsknecht', '\\bfaro\\b', 'animal', 'military', 'giraffe', 'mercenary?(ies)?', 'doughboy', '\\bdeer', '\\bboa\\b', 'tiger', '\\blion', '\\bzoo\\b', '\\bbear\\b', 'monkey', 'ostrich', 'rhino', 'wolf', 'panther', 'zebra', 'type elastolin', '\\b19[01234]\\d', 'prewar', 'Steckfigur', 'connector', 'socket', 'regiment', 'grenadier', 'lafredo', 'M[aä]rklin', 'elastolin compatible', 'compatible with elastolin', 'elastolin\\?', '(suitable|matching|fits) (for|to) Elastolin', '\\blead\\b', 'ADVERTISING Brands', 'luftwaffe', 'mussolini', 'diedhoff', 'quiralu', 'blechräder', 'air france', 'advertising', 'plug', 'nativity', 'ww2', 'wwii', '44\\d{2}', '4\\d{4}', '5.6cm', '1\\:72', 'CM 4', '\\b1 5\\/8', '\\b1 3\\/4', '1/50', '1.5 Inch'];
     //filter.excludeTerms = ['1930'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['ship0v', 'frichmuthboy', 'el-siluro', 'jskins72', 'oz75', 'brams741', 'dancas3012', 'michaelkinhart', 'karoly558', 'lobster75459', ' fb78', 'vintage_villages'];
