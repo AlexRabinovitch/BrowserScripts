@@ -99,7 +99,7 @@ function getFilter(observer)
 
 function processNode(node, filter)
 {
-    var titles = node.querySelectorAll('h3.s-item__title');
+    var titles = node.querySelectorAll('div.s-item__title');
     var title = '';
     if(titles && titles.length > 0)
     {
