@@ -249,7 +249,7 @@ function fillFilters()
     var marxExcludedSellers = ['amawill-3200', 'supersmileygerry', 'lewiq', ' 2010waltb', 'avalerina', 'chrislach1', 'zuber', 'diets-r-us', 'iamthepumpkinking', 'winston49120', 'classic_plastick', 'pezdudewelch', 'bea_4_99'];
 
     var excludeSellersHorsesSaddles = ['apeman28', 'recordsiam7', 'rugbychick12', 'gypwop', 'kandeekane13'];
-    var excludeTermssHorsesSaddles = ['Pa?o?ncho', 'Marvel', 'Valou?r', 'joint', 'articulated', 'Valiant', 'Breyer', '13.5"', '9 inch'];
+    var excludeTermssHorsesSaddles = ['Pa?o?ncho', 'Marvel', 'Valou?r', 'joint', 'articulated', 'Valiant', 'Breyer', '9 inch', '13"', '13.5"'];
 
     var commonExcludeCountries = ['China'];
 
