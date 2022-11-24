@@ -243,12 +243,12 @@ function fillFilters()
     var inch456Exclude = ['crescent', 'payton', 'duck', 'bend', 'Squishmallows', 'drum', '\\bpee', '(doctor|dr) who', 'rescue', 'dime novel', 'taxi', 'leather', 'lanard', 'Space Jam', '\\bnba\\b', 'bandai', 'motorhead', 'Squeaker', 'zombie', 'Julius Jones', 'burger king', 'plastoy', '1 1/4"', '1.5"', '1 3/4"', '2 1/4', '2.5”', '2.5"', '2 3/4"', '2-1/4', '2 1/4"', '2.5”', '2-3/4"', '2 3/4', '2.75"', '1:12', '1/12', '8 3/4"', '12.5"'];
 
     var commonExcludedSellers = ['gtohall', 'bhall0415', ' alamo3636', 'laparkamania', 'softball-1baseball-2', 'jonsmemorabiliamart64', 'picker_picker', 'oldfartcollections', 'annfrei_12', 'luckynickels', 'griff2299', 'sstoys2', 'kvik_567', 'mirthunder', 'brcli_25', 'kerrlindle0', 'crash29', 'janerose2014', 'softviking', 'tbt', 'davenportpm1', 'leopardlover48', 'www.telecoin.bizland.com', 'infernal_devices', '2rosesathome', 'j_byers_24', 'the\\*village\\*idiot', 'vintagestg', 'littletoymaker', 'realbricks', 'goatsonparade17023', 'alysunwonderland', 'tin-toyman', 'jhsmith400', 'cumberlandborn'];
-    var commonExcludedTerms = ['(Joh?h?n?ny|Johnnie|Jane|Jamie|Jimmy|Josie|Jay) West', 'Sam Cobra', 'Best of (the )?West', 'BOTW', 'Ready Gang', 'movable', 'Legends of (the )?West', 'cherokee', 'Be[bp]op', 'cap.?gun', '\\bw(ind)?.?up\\b', 'ring.?hand', 'pin.?ball', 'jigsaw', 'puzzle', 'Barclay', 'Manoil', 'pl?ay.?mobil', 'play.?skool', 'play.?people', 'Lincoln.*?log', 'friction', 'ajax', '\\bdolls?\\b', 'ram.?p.?walk', 'Bravo', '\\bH(O|0)\\b', 'HO scale', 'Hasbro', '\\bmarble(s)?\\b', 'swirl', 'jabo', 'celluloid', 'harmonica', 'plush', 'navwar', 'giant brand', 'Tonka', 'POST.?CARD', 'swoppet?d?', 'swivel', 'moo mesa', 'marchon', 'little.?people', 'gbpv', 'Popeye', 'Fisc?her.?Price', 'Bonanza', 'clock.?work', '\\bpull.?toy\\b', '\\btin.?plate\\b', 'critter', 'Pullman', 'puppet', 'Mickey Mouse', 'G(\\.)?I(\\.)?.?Joe', 'playschool', 'stuffed', 'motorcycle', 'bendable', 'costume', 'hot.?wheels', '\\bLOTR\\b', 'poseable', 'composite', 'composition', '\\bking.?(&)?(and)?.?country\\b', '1:6', '1/6'];
+    var commonExcludedTerms = ['(Joh?h?n?ny|Johnnie|Jane|Jamie|Jimmy|Josie|Jay) West', 'Sam Cobra', 'Best of (the )?West', 'BOTW', 'Ready Gang', 'movable', 'Legends of (the )?West', 'cherokee', 'Be[bp]op', 'cap.?gun', '\\bw(ind)?.?up\\b', 'ring.?hand', 'pin.?ball', 'jigsaw', 'puzzle', 'Barclay', 'Manoil', 'pl?ay.?mobil', 'play.?skool', 'play.?people', 'Lincoln.*?log', 'friction', 'ajax', '\\bdolls?\\b', 'ram.?p.?walk', 'Bravo', '\\bH(O|0)\\b', 'HO scale', 'Hasbro', '\\bmarble(s)?\\b', 'swirl', 'jabo', 'celluloid', 'harmonica', 'plush', 'navwar', 'giant brand', 'Tonka', 'POST.?CARD', 'swoppet?d?', 'swivel', 'moo mesa', 'marchon', 'little.?people', 'gbpv', 'Popeye', 'Fisc?her.?Price', 'Bonanza', 'clock.?work', '\\bpull.?toy\\b', '\\btin.?plate\\b', 'critter', 'Pullman', 'puppet', 'Mickey Mouse', 'G(\\.)?I(\\.)?.?Joe', 'playschool', 'stuffed', 'motorcycle', 'bendable', 'costume', 'hot.?wheels', '\\bLOTR\\b', 'poseable', 'composite', 'composition', '\\bking.?(&)?(and)?.?country\\b', '1:6', '1/6', '12"'];
 
     var marxExcludedTerms = ['fortune', 'Gabriel', 'sleeping beauty', '\\bno Marx\\b', 'nos rare Marx$', ', Marx$', 'Marx!!!$', 'Marx-U', 'marx style', 'Marx.?\\?', 'marx( toys)? \\(\\?\\)', 'good with marx', 'replicants', 'MPC', 'tim.?mee', 'Linemar', 'Karl Marx', 'Engels', 'Spencer', 'Barzso', 'Schaffner', 'Richard Marx', 'Marx brothers', 'Maddox', 'Garret'];
     var marxExcludedSellers = ['amawill-3200', 'supersmileygerry', 'lewiq', ' 2010waltb', 'avalerina', 'chrislach1', 'zuber', 'diets-r-us', 'iamthepumpkinking', 'winston49120', 'classic_plastick', 'pezdudewelch', 'bea_4_99'];
 
-    var excludeSellersHorsesSaddles = ['apeman28', 'recordsiam7', 'rugbychick12', 'gypwop', 'kandeekane13'];
+    var excludeSellersHorsesSaddles = ['apeman28', 'recordsiam7', 'rugbychick12', 'gypwop', 'kandeekane13', '12"'];
     var excludeTermssHorsesSaddles = ['Pa?o?ncho', 'Marvel', 'Valou?r', 'joint', 'articulated', 'Valiant', 'Breyer', '9 inch', '13"', '13.5"'];
 
     var commonExcludeCountries = ['China'];
@@ -304,7 +304,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-7"; // Marx cowboys
-    filter.excludeTerms = ['lithographed', 'crazy', 'target', 'Buck Rogers', 'lledo', 'cap gun', 'linemar', 'gijoe', 'reamsa', 'jecsan', 'ride.on', 'johnnie', '1/72', '7.5"', ' 12”', '12"'];
+    filter.excludeTerms = ['lithographed', 'crazy', 'target', 'Buck Rogers', 'lledo', 'cap gun', 'linemar', 'gijoe', 'reamsa', 'jecsan', 'ride.on', 'johnnie', '1/72', '7.5"', ' 12”'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
     filter.excludeSellers = ['jerseycameron', 'hapeste_0'];
@@ -369,7 +369,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-19"; // Marx horses
-    filter.excludeTerms = ['Hartland', '\\btin\\b', '\\bcart\\b', 'action', 'noble', 'moving', 'Gordon', 'MCML', 'gold knight', 'Big Jim', 'General Custer', 'Odin', 'Geronimo', 'viking', 'ride.on', 'pony tail', 'iron horse', 'comanche', 'Destiny', 'palomino', 'pinto', 'cloud', 'railroad', 'rocking', '8"', '9”', '9"', '12"', '12”', '13”'];
+    filter.excludeTerms = ['Hartland', '\\btin\\b', '\\bcart\\b', 'action', 'noble', 'moving', 'Gordon', 'MCML', 'gold knight', 'Big Jim', 'General Custer', 'Odin', 'Geronimo', 'viking', 'ride.on', 'pony tail', 'iron horse', 'comanche', 'Destiny', 'palomino', 'pinto', 'cloud', 'railroad', 'rocking', '8"', '9”', '9"', '12”', '13”'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(excludeTermssHorsesSaddles);
