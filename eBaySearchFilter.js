@@ -61,7 +61,9 @@ document.onreadystatechange = () =>
 
         var filter = getFilter(this);
 
-        var nodes = document.querySelectorAll('li.s-item.s-item--watch-at-corner');
+        var nodes = document.querySelectorAll('li.s-item.s-item__pl-on-bottom');
+
+        console.log('Nodes found: ' + nodes.length);
 
         for(var i = 0; i < nodes.length; i++)
         {
