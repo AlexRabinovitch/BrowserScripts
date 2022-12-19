@@ -431,7 +431,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-25"; // Preiser
-    filter.excludeTerms = ['4\\d{4}','10\\d{3}', '5(6|7|8)\\d{3}', '541[0-9][0-9]', '\\b(\\d{1})?30\\d{2}', '\\bGerman\\b', 'Wehrmacht', 'Luftwaffe', 'Prussian', 'bburago', '^Starlux', 'Feuerwehrmänner', '45mm'];
+    filter.excludeTerms = ['4\\d{4}','10\\d{3}', '5(6|7|8)\\d{3}', '523\\d{2}', '541[0-9][0-9]', '\\b(\\d{1})?30\\d{2}', '\\bGerman\\b', 'Wehrmacht', 'Luftwaffe', 'Prussian', 'bburago', '^Starlux', 'Feuerwehrmänner', 'les animaux', 'le monde civil', 'creche *de *noel', '45mm'];
     _filters[filter.searchName] = filter;
 
     console.log('Done filling filters.');
