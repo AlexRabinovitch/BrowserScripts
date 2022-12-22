@@ -183,7 +183,7 @@ function processComplexTerms(filter, node, title)
 
 function processSellers(filter, node)
 {
-    return processNonTitleItems(filter.excludeSellers, node, 'span.s-item__seller-info-text', 'Seller');
+    return processNonTitleItems(filter.excludeSellers, node, 'div.s-seller-feedback', 'Seller');
 }
 
 function processCountries(filter, node)
