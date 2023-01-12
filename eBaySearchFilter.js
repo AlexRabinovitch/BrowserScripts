@@ -295,7 +295,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-5"; // Marx knights
-    filter.excludeTerms = ['Gordon', 'golden', '\\bgold knight\\b','\\bsilver knight\\b', 'Stuart', 'prince Charles', 'Valour', 'moveable', 'diedhoff', 'MPC', '\\bMego\\b', 'armou?red horse'];
+    filter.excludeTerms = ['Gordon', 'Stuart', 'prince Charles', 'Valour', 'moveable', 'diedhoff', 'MPC', '\\bMego\\b', 'armou?red horse'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
     filter.excludeSellers = ['owllady77', 'ereggen_0', 'tebur-8', 'jjjjacjon', 'ggminhai', 'ralph316100'];
