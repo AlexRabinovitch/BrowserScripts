@@ -153,7 +153,7 @@ function processMustTerms(filter, node, title)
     if(filter.mustTerms)
     {
         var regex = new RegExp("^((?!" + filter.mustTerms.join("|") + ").)*$", "i");
-        console.log('Regex: ' + regex);
+        //console.log('Regex: ' + regex);
 
         return processItem(node, title, regex, 'Title');
     }
