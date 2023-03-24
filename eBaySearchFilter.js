@@ -110,7 +110,11 @@ function processNode(node, filter)
         {
             title = title.substring(11);
         }
-        console.log('Title found: ' + title);
+        if(title.toUpperCase().startsWith('SHOP ON EBAY'))
+        {
+            return;
+        }
+        //console.log('Title found: ' + title);
 
         if(processMustTerms(filter, node, title))
         {
@@ -149,6 +153,8 @@ function processMustTerms(filter, node, title)
     if(filter.mustTerms)
     {
         var regex = new RegExp("^((?!" + filter.mustTerms.join("|") + ").)*$", "i");
+        console.log('Regex: ' + regex);
+
         return processItem(node, title, regex, 'Title');
     }
     return false;
@@ -224,6 +230,7 @@ function processItem(node, item, regex, itemName)
         node.remove();
         return true;
     }
+    //console.log(itemName + ' no match found: ' + item);
     return false;
 }
 
@@ -234,12 +241,12 @@ function fillFilters()
     var inch456 = ['\\b(6|six)(½)?( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)',
                    '\\b(5|five)(½)?( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)',
                    '\\b(4|four)(½)?( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)'
-                   /*,
-                   \\b6.?"', '6”', "6''", '6.?inch', 'six inch'
+                   /*
+                   '\\b6.?"', '6”', "6''", '6.?inch', 'six inch',
                         '5.?"', '5”', "5''", '5.?inch', 'five inch',
                         '5 1/2.?"', '5 1/2”', "5 1/2''", '5 1/2.?inch', 'five 1/2 inch',
                         '\\b4.?"', '\\b4”', "4''", '4.?inch', 'four inch',
-                        '4 1/2.?"', '4 1/2”', "4 1/2''", '4 1/2.?inch', 'four 1/2 inch',*/
+                        '4 1/2.?"', '4 1/2”', "4 1/2''", '4 1/2.?inch', 'four 1/2 inch'*/
                         ];
 
     var inch456Exclude = ['crescent', 'payton', 'duck', 'bend', 'Squishmallow', 'drum', '\\bpee', '(doctor|dr) who', 'rescue', 'dime novel', 'taxi', 'leather', 'lanard', 'Space Jam', '\\bnba\\b', 'bandai', 'motorhead', 'Squeaker', 'zombie', 'Julius Jones', 'burger king', 'plastoy', 'pickles', '\\barco\\b', 'grandex', 'vampire', 'Geronimo', '\\bDC\\b', '1 1/4"', '1.5"', '1 3/4"', '2 1/4', '2.5”', '2.5"', '2 3/4"', '2-1/4', '2 1/4"', '2.5”', '2-3/4"', '2 3/4', '2.75"', '1:12', '1/12', '8 3/4"', '12.5"'];
@@ -262,7 +269,7 @@ function fillFilters()
     filter.excludeTerms = filter.excludeTerms.concat(inch456Exclude);
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['jodaug_11', 'cccric-23', 'lostandfoundtreasure', 'nlt3'];
-    filter.excludeItemIDs = [154246251005];
+//    filter.excludeItemIDs = [154246251005];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
