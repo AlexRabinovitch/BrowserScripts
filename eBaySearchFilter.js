@@ -439,7 +439,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-25"; // Preiser
-    filter.excludeTerms = ['\\b4\\d{4}','10\\d{3}', '\\b5(6|7|8)\\d{3}', '\\b523\\d{2}', '\\b541\\d{2}', '\\b(\\d{1})?30\\d{2}\\b', '\\b5(3|4)\\d{2}\\b', '\\b5475\\d{1}\\b', '\\bGerman\\b', 'Wehrmacht', 'Luftwaffe', 'Prussian', 'bburago', '^Starlux', 'Feuerwehrmänner', 'les animaux', 'le monde civil', 'creche *de *noel', 'civil world', 'modern army', 'musiker', 'soldat allemand', 'Preu(ß|ss)', 'infanterie', 'regiment', 'tedesco', 'Deutscher', '45mm'];
+    filter.excludeTerms = ['\\b4\\d{4}','10\\d{3}', '\\b5(6|7|8)\\d{3}', '\\b523\\d{2}', '\\b541\\d{2}', '\\b(\\d{1})?30\\d{2}\\b', '\\b5(3|4)\\d{2}\\b', '\\b5475\\d{1}\\b', '\\bGerman\\b', 'Wehrmacht', 'Luftwaffe', 'Prussian', 'bburago', '^Starlux', 'Feuerwehrmänner', 'les animaux', 'le monde civil', 'creche *de *noel', 'civil world', 'modern army', 'musiker', 'Musikkapelle', 'soldat allemand', 'Preu(ß|ss)', 'infanterie', 'regiment', 'tedesco', 'Deutscher', '45mm'];
     _filters[filter.searchName] = filter;
     
     // Marx zorro // worldwide //marx (zorro) -(johnny,apollo,marvel,dc,gabriel,bootleg,miniatures,"no marx",7",1/6)
