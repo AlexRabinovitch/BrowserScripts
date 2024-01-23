@@ -25,9 +25,11 @@ function fillSelectors()
 {
     selectors.push({articleSelector:"div.layoutItem.multi-article-images-1280-2", indicatorSelector: ["div:contains('Pplus')"]});
     selectors.push({articleSelector:"div.layoutItem.multi-article-1280-2", indicatorSelector: ["a[href*='ynet.co.il/judaism']"]});
+    selectors.push({articleSelector:"div.layoutItem.tab-1280", indicatorSelector: ["a[href*='ynet.co.il/games']"]});
     selectors.push({articleSelector:"div.layoutItem.multi-images-1280", indicatorSelector: ["div:contains('תוכן מקודם')",
                                                                                            "div:contains('ועידות וכנסים')",
                                                                                            "div:contains('טיסות במחירים שווים')",
+                                                                                           "div:contains('פוליסע')",
                                                                                            "div:contains('אולי פספסתם')"]});
     selectors.push({articleSelector:"div.MultiImagesMagazine", indicatorSelector: ["a[href*='ynet.co.il/laisha']"]});
     selectors.push({articleSelector:"div.layoutItem.multi-article-top-1280", indicatorSelector: ["div:contains('אסטרולוגיה')",
