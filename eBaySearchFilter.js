@@ -300,6 +300,7 @@ function fillFilters()
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeItemIDs = [184583432373, 124617729318];
     filter.excludeSellers = ['gotakola', 'dayspringdays', 'rpols6', 'unlimited_hk_llc', 'justkidsnostalgia', 'rinnys_boutique', 'scarlettosnow', 'koolman44', 'the-kojima-japaneseshop', 'dollyscards', 'dressupgirl', 'anita.colem', 'dungeonartifacts'];
+    filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     _filters[filter.searchName] = filter;
 
     filter = new Object();
