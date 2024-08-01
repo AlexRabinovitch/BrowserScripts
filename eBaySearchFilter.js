@@ -271,6 +271,7 @@ function fillFilters()
     filter.excludeTerms = filter.excludeTerms.concat(inch456Exclude);
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['jodaug_11', 'cccric-23', 'lostandfoundtreasure', 'nlt3'];
+    filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
 //    filter.excludeItemIDs = [154246251005];
     _filters[filter.searchName] = filter;
 
