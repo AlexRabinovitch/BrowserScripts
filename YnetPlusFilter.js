@@ -25,7 +25,8 @@ function fillSelectors()
 {
     selectors.push({articleSelector:"div.layoutItem.multi-article-images-1280-2", indicatorSelector: ["div:contains('Pplus')"]});
     selectors.push({articleSelector:"div.layoutItem.multi-article-1280-2", indicatorSelector: ["a[href*='ynet.co.il/judaism']"]});
-    selectors.push({articleSelector:"div.layoutItem.tab-1280", indicatorSelector: ["a[href*='ynet.co.il/games']"]});
+    selectors.push({articleSelector:"div.layoutItem.tab-1280", indicatorSelector: ["a[href*='ynet.co.il/games']",
+                                                                                  "div:contains('פוליסע')"]});
     selectors.push({articleSelector:"div.layoutItem.multi-images-1280", indicatorSelector: ["div:contains('תוכן מקודם')",
                                                                                            "div:contains('ועידות וכנסים')",
                                                                                            "div:contains('טיסות במחירים שווים')",
@@ -66,6 +67,8 @@ function fillSelectors()
                                                                                         "a[href*='ynet.co.il/judaism']",
                                                                                         "a[href*='frogi.co.il/']",
                                                                                         "a[href*='ynet.co.il/dating']"]});
+    selectors.push({articleSelector:"div.layoutItem.multi-audio-row", indicatorSelector: ["div:contains('פודקאסטים')"]});
+    selectors.push({articleSelector:"div.layoutItem.opinions", indicatorSelector: ["div:contains('רלוונט')"]});
 }
 
 function findNodesAndClear()
