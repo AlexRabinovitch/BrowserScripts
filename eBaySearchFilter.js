@@ -327,6 +327,11 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
+    filter.searchName = "id-8"; // Atlantic
+    filter.excludeTerms = ['Atlantic Scheme', 'Boeing', 'bombardier', 'carabinieri', 'paratroop', 'air force', 'bersaglieri', 'vespa', 'jeep', 'battalion', 'rocket', 'missile', 'cannon', 'frog', 'truck', 'marine', 'patrol', 'troop', 'sailor', 'lenin', 'fusilier', 'decal', '\\bcar(s)?\\b', '\\b1\\d{3}\\b', '\\b1\\d{4}\\b'];
+    _filters[filter.searchName] = filter;
+
+    filter = new Object();
     filter.searchName = "id-9"; // Auburn //worldwide auburn (cowboy,cowboys,indian,indians,frontiersman,frontiersmen,frontier,pioneer,pioneers,horse,horses) -("western models",shoe,shoes,horseshoe,police,farm,"rubber axe","id-9")
     filter.excludeTerms = ['Kusan', 'hammer', 'motorcycle', 'hatchet'];
     _filters[filter.searchName] = filter;
