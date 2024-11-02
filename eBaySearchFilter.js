@@ -328,7 +328,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-8"; // Atlantic
-    filter.excludeTerms = ['Atlantic Scheme', 'Boeing', 'bombardier', 'carabinieri', 'paratroop', 'air force', 'bersaglieri', 'vespa', 'jeep', 'battalion', 'rocket', 'missile', 'cannon', 'frog', 'truck', 'marine', 'patrol', 'troop', 'sailor', 'lenin', 'fusilier', 'decal', '\\bcar(s)?\\b', '\\b1\\d{3}\\b', '\\b1\\d{4}\\b'];
+    filter.excludeTerms = ['Atlantic Scheme', 'Boeing', 'bombardier', 'carabinieri', 'paratroop', 'air force', 'bersaglieri', 'vespa', 'jeep', 'battalion', 'rocket', 'missile', 'cannon', 'frog', 'truck', 'marine', 'patrol', 'troop', 'sailor', 'lenin', 'fusilier', 'decal', '\\bair\\b', '\\bcar(s)?\\b', '\\b1(0|1|5)\\d{2}\\b', '\\b11\\d{3}\\b'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
