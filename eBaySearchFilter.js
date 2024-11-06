@@ -348,7 +348,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-11"; // Empire
+    filter.searchName = "id-11"; // Empire //worldwide //empire (indian,indians,pioneer,pioneers,frontiersmen,frontiersman,1776,frontier) -(magazine,puzzle,rpg,star,citadel,chess,army,hachette,lead,king,north,25mm) -(geronimo,defiance,command,metal,carolina,sikh,15mm,"id-11")
     filter.excludeTerms = ['Hachette-marshals', 'Spirit of the Empire', 'Sons of the Empire', 'redcoat', 'empire state', 'Sons of Empire', 'Warhammer', 'fire (dept )?chief', 'Roman empire', 'end of empire', 'british', 'Japan'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['oraff_tm', 'libro_di_faccia'];
