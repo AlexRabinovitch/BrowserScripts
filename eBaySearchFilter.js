@@ -328,7 +328,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-8"; // Atlantic
+    filter.searchName = "id-8"; // Atlantic //atlantic (cowboy,cowboys,outlaw,outlaws,sheriff,sheriffs,west,1214,"1/32") -(soldatini,soldiers,lionel,gulliver,airfix,chess,hasbro,"no atlantic",nardi,german,air,ww,resin,replica,mussolini,forma,3d,wwii,alpine,1/72,ho,h0,"id-8") -(alpino,aviazione,carabiniere,carabinieri,sbarco,fante,marinai,russi) // worldwide // lellina9692010,dracula-brad,andre17,marketoy,collect-world-sarl,lellina9692010,dracula-brad,andre17,marketoy,collect-world-sarl,leonveck,cianciconedue
     filter.excludeTerms = ['Atlantic Scheme', 'Boeing', 'bombardier', 'carabinieri', 'paratroop', '\\bair.?(force|craft)', 'bersaglieri', 'vespa', 'jeep', 'battalion', 'rocket', 'missile', 'cannon', 'frog', 'truck', 'marine', 'patrol', 'troop', 'sailor', 'lenin', 'fusilier', 'modern', 'infantry', 'military', 'marina', 'aviator', 'decal', '\\bair\\b', '\\bcar(s)?\\b', '\\b1(0|1|5)\\d{2}\\b', '\\b11\\d{3}\\b', '\\b20(0|1|2)\\d{1}\\b'];
     _filters[filter.searchName] = filter;
 
