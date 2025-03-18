@@ -44,7 +44,7 @@ new MutationObserver(function(mutations)
         for (var j = 0; j < mutationAddedNodes.length; j++)
         {
             var node = mutationAddedNodes[j];
-            if (node.tagName && node.tagName.toUpperCase() == "LI" && node.classList && node.classList.contains("s-item"))
+            if (node.tagName && node.tagName.toUpperCase() == "LI" && node.classList && (node.classList.contains("s-item") || node.classList.contains("su-card-container")))
             {
                 console.log('Node found');
                 processNode(node, filter);
@@ -62,7 +62,7 @@ document.onreadystatechange = () =>
 
         var filter = getFilter(this);
 
-        var nodes = document.querySelectorAll('li.s-item.s-item__pl-on-bottom');
+        var nodes = document.querySelectorAll('li.s-item.s-item__pl-on-bottom, li.su-card-container.su-card-container--horizontal');
 
         console.log('Nodes found: ' + nodes.length);
 
@@ -102,7 +102,7 @@ function getFilter(observer)
 
 function processNode(node, filter)
 {
-    var titles = node.querySelectorAll('div.s-item__title');
+    var titles = node.querySelectorAll('div.s-item__title, span.su-styled-text.primary.default');
     var title = '';
     if(titles && titles.length > 0)
     {
@@ -299,6 +299,7 @@ function fillFilters()
     filter = new Object();
     filter.searchName = "id-4"; // frontiersmen
     filter.excludeTerms = ['\\breel', '\\bmug', 'Bushido', 'Action.?Man', 'Action.?Team', '\\blead\\b', 'coin', 'Glass', 'teddy.?bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b', 'ad&d', 'warhammer', 'Bachmann', 'Citadel', 'Skylander', 'Dakin', '25mm', 'Pok(é|e)mon', 'speed', 'lost world', 'pillow', 'wyrd', 'wallet', '1:6th', 'gloves', 'Mordenkainen', 'Mandalorian', 'benalish', 'duluth', 'demigod', 'resin', 'Kilgore', 'Monsters', 'hell.?dorado', 'baseball', 'belt', 'badge', 'paw patrol', 'ruby', 'gator', 'pulsecon', 'Buddy.?L', 'alien', 'Artisan', 'Bushiroad', 'Greyjoy', 'pocket knife', 'storm.?trooper', 'goliath', '\\bgame\\b', 'vtes', 'Bofuri', 'hand.?made', '\\bdnd\\b', 'robot', 'caldor', 'outfit', 'midnight hunt', 'Warriors.*?Warrens', 'just friends', 'Weiss Schwarz', 'Figma', 'ATDT', 'Kobol', 'truck', '\\bhat\\b', 'Border3d', 'Jurassic', 'dragon trapper', 'Warlord Games', 'nendoroid', 'dbd', 'bear', 'rathi', '\\bdecal(s)?\\b', 'glyos', 'locomotive', 'gnome', 'dirt.?trapper', 'privateer', 'MaxMini', 'gnarl', 'rpg', 'croak', 'soul.?trapper', 'yu.?gi.?oh', 'mirkwood', 'frostgrave', 'dungeons', 'dead( )?by( )?daylight', 'Tainted Grail', 'timpo', 'helmet', 'flyer', 'dragonfly', 'alena', 'doomlings', 'gnoblit', 'gnoblar', 'mouse', 'death', 'dauthi', 'dominaria', 'ballynock', 'skulldart', 'geist', 'gavony', '15mm', '20mm', '28.?mm', '32.?mm', '35mm', '40mm', '1 5/8', '1/6', '12"'];
+    //console.log(filter.excludeTerms);
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeItemIDs = [184583432373, 124617729318];
     filter.excludeSellers = ['gotakola', 'dayspringdays', 'rpols6', 'unlimited_hk_llc', 'justkidsnostalgia', 'rinnys_boutique', 'scarlettosnow', 'koolman44', 'the-kojima-japaneseshop', 'dollyscards', 'dressupgirl', 'anita.colem', 'dungeonartifacts'];
@@ -324,7 +325,6 @@ function fillFilters()
     filter.excludeSellers = ['jerseycameron', 'hapeste_0'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     filter.excludeSellers = filter.excludeSellers.concat(marxExcludedSellers);
-    console.log(filter.excludeSellers);
     _filters[filter.searchName] = filter;
 
     filter = new Object();
