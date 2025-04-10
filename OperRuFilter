@@ -241,7 +241,7 @@ function fillFilters()
     alwaysBlock.Headers = ['Надан.*?Фридрихсон', 'Вероник.*?Крашенинников', 'Во все тяжкие', 'Breaking Bad', 'Позывной ', 'Помощь детям .*Донецка', 'Реми Майснер', 'Михаил.*?Фадеев', 'Зулейха', 'Эффект Доплера', 'Арктик', 'Солженицын', 'в переводе Гоблина', 'Вечерний Излучатель', 'Победитель конкурса', 'Приз получает', 'Ремня получает', 'арктич', 'vip\.oper\.ru', 'Слово пацана', 'Внеклассовое чтение', 'ДНР', 'Goblin news', 'Sputnik'];
     alwaysBlock.Users = ['redacteur', 'Redakteur', 'Onepamop', 'реклама'];
     alwaysBlock.Topics = ['Это ПЕАР', 'Железки', 'СВО'];
-    alwaysBlock.Keywords = ['Арктик', 'vip\.oper\.ru'];//'Уралов', '^Скидка', '^Распродажа',
+    alwaysBlock.Keywords = ['Арктик'];//'Уралов', '^Скидка', '^Распродажа', 'vip\.oper\.ru'
     _filters.AlwaysBlock = alwaysBlock;
 
     console.log('Done filling filters.');
