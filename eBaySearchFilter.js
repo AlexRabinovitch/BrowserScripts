@@ -460,7 +460,7 @@ function fillFilters()
     filter.excludeTerms = filter.excludeTerms.concat(excludeTermsElastolin);
     filter.complexTerms = [];
     filter.complexTerms.push(buildComplexTermsFilter(['soldier'], ['Norman', 'Roman', 'cowboy', 'indian', 'native', 'medieval', 'middle', 'castle', 'knight', 'ritter', 'Karl May', 'catapult', 'viking', 'gaul', 'toy']));
-    filter.complexTerms.push(buildComplexTermsFilter(['soldat'], ['Norman', 'Roman', 'cowboy', 'indian', 'native', 'medieval', 'middle', 'castle', 'knight', 'ritter', 'Karl May', 'catapult', 'viking', 'gaul', 'romain', 'chevalier', 'toy']));
+    filter.complexTerms.push(buildComplexTermsFilter(['soldat'], ['Norman', 'Roman', 'cowboy', 'indian', 'native', 'medieval', 'middle', 'castle', 'knight', 'ritter', 'Karl May', 'catapult', 'viking', 'gaul', 'romain', 'chevalier', 'toy', 'Spielzeug']));
     _filters[filter.searchName] = filter;
 
     // Marx zorro // worldwide //marx (zorro) -(johnny,apollo,marvel,dc,gabriel,bootleg,miniatures,"no marx",7",1/6)
