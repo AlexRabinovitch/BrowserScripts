@@ -351,8 +351,7 @@ function fillFilters()
     filter.excludeTerms = filter.excludeTerms.concat(excludeTermsElastolin);
     filter.excludeSellers = ['ship0v', 'frichmuthboy', 'el-siluro', 'jskins72', 'oz75', 'brams741', 'dancas3012', 'michaelkinhart', 'karoly558', 'lobster75459', ' fb78', 'vintage_villages'];
     filter.complexTerms = [];
-    filter.complexTerms.push(buildComplexTermsFilter(['soldier'], ['Norman', 'Roman', 'cowboy', 'indian', 'native', 'medieval', 'middle', 'castle', 'knight', 'ritter', 'Karl May', 'catapult', 'viking', 'gaul', 'toy']));
-    filter.complexTerms.push(buildComplexTermsFilter(['military'], ['Norman', 'Roman', 'cowboy', 'indian', 'native', 'medieval', 'middle', 'castle', 'knight', 'ritter', 'Karl May', 'catapult', 'viking', 'gaul', 'toy']));
+    filter.complexTerms.push(buildComplexTermsFilter(['soldier', 'soldat', 'military'], ['Norman', 'Roman', 'cowboy', 'indian', 'native', 'medieval', 'middle', 'castle', 'knight', 'ritter', 'Karl May', 'catapult', 'viking', 'gaul', 'toy']));
     filter.complexTerms.push(buildComplexTermsFilter(['officer'], ['Roman']));
     _filters[filter.searchName] = filter;
 
