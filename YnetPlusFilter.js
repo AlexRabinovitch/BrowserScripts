@@ -62,6 +62,7 @@ function fillSelectors()
                                                                                                "a[href*='ynet.co.il/activism/category/36572']",
                                                                                                "a[href*='ynet.co.il/laisha']",
                                                                                                "div:contains('+ynet')"]});
+    selectors.push({articleSelector:"div.layoutItem.multi-articles-section", indicatorSelector: ["div:contains('לייף סטייל')"]});
     selectors.push({articleSelector:"div.layoutItem.multi-article", indicatorSelector: ["div:contains('אסטרולוגיה')",
                                                                                         "a[href*='xnet.ynet.co.il']",
                                                                                         "a[href*='ynet.co.il/judaism']",
