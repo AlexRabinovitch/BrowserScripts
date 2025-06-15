@@ -44,7 +44,7 @@ new MutationObserver(function(mutations)
         for (var j = 0; j < mutationAddedNodes.length; j++)
         {
             var node = mutationAddedNodes[j];
-            if (node.tagName && node.tagName.toUpperCase() == "LI" && node.classList && (node.classList.contains("s-item") || node.classList.contains("su-card-container")))
+            if (node.tagName && node.tagName.toUpperCase() == "LI" && node.classList && (node.classList.contains("s-item") || node.classList.contains("su-card-container") || node.classList.contains("s-card--horizontal")))
             {
                 console.log('Node found');
                 processNode(node, filter);
@@ -62,7 +62,7 @@ document.onreadystatechange = () =>
 
         var filter = getFilter(this);
 
-        var nodes = document.querySelectorAll('li.s-item.s-item__pl-on-bottom, li.su-card-container.su-card-container--horizontal');
+        var nodes = document.querySelectorAll('li.s-item.s-item__pl-on-bottom, li.su-card-container.su-card-container--horizontal, li.s-card.s-card--horizontal');
 
         console.log('Nodes found: ' + nodes.length);
 
@@ -115,7 +115,7 @@ function processNode(node, filter)
         {
             return;
         }
-        //console.log('Title found: ' + title);
+        console.log('Title found: ' + title);
 
         if(processMustTerms(filter, node, title))
         {
