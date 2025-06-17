@@ -23,6 +23,7 @@ var selectors = [];
 
 function fillSelectors()
 {
+    selectors.push({articleSelector:"a.TopStoryBottomItem", indicatorSelector: ["a[href*='ynet.co.il/judaism']"]});
     selectors.push({articleSelector:"div.layoutItem.multi-article-images-1280-2", indicatorSelector: ["div:contains('Pplus')"]});
     selectors.push({articleSelector:"div.layoutItem.multi-article-1280-2", indicatorSelector: ["a[href*='ynet.co.il/judaism']"]});
     selectors.push({articleSelector:"div.layoutItem.tab-1280", indicatorSelector: ["a[href*='ynet.co.il/games']",
@@ -122,6 +123,14 @@ function findItemsAndRemoveByChildrenExistence(root, itemsSelector, childrenSele
         items.each(function(i, item) {
             for(var j = 0; j < childrenSelector.length; j++)
             {
+                // important: check the element itself before checking its children
+                var selfIndicator = item.matches(childrenSelector[j]);
+                if(selfIndicator)
+                {
+                    $(item).remove();
+                    break;
+                }
+
                 var indicators = $(item).find(childrenSelector[j]).clone();
 
                 if(indicators.length > 0)
