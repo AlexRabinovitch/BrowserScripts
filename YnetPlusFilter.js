@@ -124,7 +124,7 @@ function findItemsAndRemoveByChildrenExistence(root, itemsSelector, childrenSele
             for(var j = 0; j < childrenSelector.length; j++)
             {
                 // important: check the element itself before checking its children
-                var selfIndicator = item.matches(childrenSelector[j]);
+                var selfIndicator = $(item).is(childrenSelector[j]);
                 if(selfIndicator)
                 {
                     $(item).remove();
