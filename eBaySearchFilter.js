@@ -277,7 +277,7 @@ function fillFilters()
     var filter = new Object();
     filter.searchName = "id-1"; // 4, 5, 6 inch cowboys and indians
     filter.mustTerms = inch456;
-    filter.excludeTerms = ['Chap Mei', 'Pail', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby', 'boot', 'subway', 'disney', 'GI Joe', 'my little pony', 'menko', 'cowboy hat', 'Logan', 'Orton', 'Chip Mei', 'Totsy', 'rocking', 'slug', 'NFL', 'Owens', 'chess', 'Posable', 'elephant', 'blanket', 'pocahontas', 'Wolverine', 'McFarlane', 'Skyforce', 'Prescott', 'penguin'];
+    filter.excludeTerms = ['Chap Mei', 'Pail', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby', 'boot', 'subway', 'disney', 'GI Joe', 'my little pony', 'menko', 'cowboy hat', 'Logan', 'Orton', 'Chip Mei', 'Totsy', 'rocking', 'slug', 'NFL', 'Owens', 'chess', 'Posable', 'elephant', 'blanket', 'pocahontas', 'Wolverine', 'McFarlane', 'Skyforce', 'Prescott', 'penguin', 'jumbo chunky'];
     filter.excludeTerms = filter.excludeTerms.concat(inch456Exclude);
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['jodaug_11', 'cccric-23', 'lostandfoundtreasure', 'nlt3'];
