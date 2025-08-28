@@ -190,7 +190,7 @@ function processComplexTerms(filter, node, title)
 
 function processSellers(filter, node)
 {
-    return processNonTitleItems(filter.excludeSellers, node, 'span.s-item__seller-info, span.su-styled-text.secondary.large', 'Seller');
+    return processNonTitleItems(filter.excludeSellers, node, 'span.s-item__seller-info, span.su-styled-text.secondary.large, span.su-styled-text.primary.large', 'Seller');
 }
 
 function processCountries(filter, node)
