@@ -472,6 +472,7 @@ function fillFilters()
 
     // Marx zorro // worldwide //marx (zorro) -(johnny,apollo,marvel,dc,gabriel,bootleg,miniatures,"no marx",7",1/6)
     // Britains swoppet knights // worldwide //(britains,britain's) (swoppet,swoppets,rose,roses,15th,1450,1451,1452,1453) (knight,knights) -(lead,timpo)
+    // DZI knights // worldwide // (soviet,ussr,dzi,dfi,donetsk) (knight,knights) -(chess,metal,tin,su,mig,1/72)
 
     console.log('Done filling filters.');
 }
