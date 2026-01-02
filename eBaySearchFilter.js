@@ -419,7 +419,7 @@ function fillFilters()
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(commonIrrelevantSizes);
-    filter.excludeSellers = ['diniowa', 'chiefdocice', 'sixthstreetsales', 'tedpoley1', 'cjc1'];
+    filter.excludeSellers = ['diniowa', 'chiefdocice', 'sixthstreetsales', 'tedpoley1', 'cjc1', 'medienvertriebundverlag'];
     filter.excludeSellers = filter.excludeSellers.concat(marxExcludedSellers);
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     filter.excludeItemIDs = [174564762027, 284120067282, 184586469330, 154251838443, 402614585946, 224407617478, 224407616782, 384071950587];
