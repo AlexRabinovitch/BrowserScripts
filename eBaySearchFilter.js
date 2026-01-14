@@ -269,7 +269,7 @@ function fillFilters()
     var marxExcludedSellers = ['amawill-3200', 'supersmileygerry', 'lewiq', ' 2010waltb', 'avalerina', 'chrislach1', 'zuber', 'diets-r-us', 'iamthepumpkinking', 'winston49120', 'classic_plastick', 'pezdudewelch', 'bea_4_99'];
 
     var excludeSellersHorsesSaddles = ['apeman28', 'recordsiam7', 'rugbychick12', 'gypwop', 'kandeekane13', '12"'];
-    var excludeTermssHorsesSaddles = ['Pa?o?ncho', 'Marvel', 'Valou?r', 'joint', 'articulated', 'Valiant', 'Breyer', '9 inch', '13"', '13 inch', '13.5"'];
+    var excludeTermssHorsesSaddles = ['Pa?o?ncho', 'Marvel', 'Valou?r', 'joint', 'articulated', 'Valiant', 'Breyer', 'lone ranger', '9 inch', '13"', '13 inch', '13.5"'];
     var excludeTermsElastolin = ['\\bgerman(s)?\\b', 'Prussian', 'wehrmacht', 'Luftwaffe', 'Preu(ß|ss)', 'soldat allemand', 'ähnlich Elastolin', 'auch zu Elastolin', 'elastolin compatible', 'elastolin\\?', '(suitable|matching|fits|compatible) (for|to|type|wie|with) Elastolin', '\\bno Elastolin', 'w\\/Elastolin', 'not elastolin', 'non elastolin', '\\b(zu|for|to) Elastolin', '^elastolin$', 'bundeswehr', 'Musikkorps', 'musiker', 'Musikkapelle', 'musician', 'waffen', '\\bSS\\b', '\\bScott', '\\bnazi\\b', 'general', 'field marshal', 'lansquenet', 'landsknecht', 'cannon', 'howitzer'];
 
     var commonExcludeCountries = ['China'];
@@ -415,7 +415,7 @@ function fillFilters()
 
     filter = new Object();
     filter.searchName = "id-20"; // Marx Indians
-    filter.excludeTerms = ['\\bcar\\b', 'target', 'tebur-8', 'skate', 'Big Jim', 'Wildflower', 'police', 'whirling', 'Brave Eagle', 'fire (dept )?chief'];
+    filter.excludeTerms = ['\\bcar\\b', 'target', 'skate', 'Big Jim', 'Wildflower', 'police', 'whirling', 'Brave Eagle', 'fire (dept )?chief', 'lone ranger'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(commonIrrelevantSizes);
