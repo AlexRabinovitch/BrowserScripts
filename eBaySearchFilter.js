@@ -62,6 +62,9 @@ document.onreadystatechange = () =>
 
         var filter = getFilter(this);
 
+        if(filter == null)
+            return;
+
         var nodes = document.querySelectorAll('li.s-item.s-item__pl-on-bottom, li.su-card-container.su-card-container--horizontal, li.s-card.s-card--horizontal');
 
         console.log('Nodes found: ' + nodes.length);
@@ -79,7 +82,12 @@ function getFilter(observer)
     {
         if(observer)
         {
-            observer.disconnect();
+            try
+            {
+                observer.disconnect();
+            }
+            catch
+            {}
         }
         return null;
     }
@@ -474,8 +482,6 @@ function fillFilters()
     // Britains swoppet knights // worldwide //(britains,britain's) (swoppet,swoppets,rose,roses,15th,1450,1451,1452,1453) (knight,knights) -(lead,timpo)
     // DZI knights // worldwide // (soviet,ussr,dzi,dfi,donetsk) (knight,knights) -(chess,metal,tin,su,mig,1/72)
     // Elastolin stagecoach // worldwide // elastolin (postkutsche,kutsche,stage,stagecoach) -(lineol,masse,kübel,flachwagen,personenwagen,jeep,tipp,krupp,wk,1935,1938,4cm)
-    // Rusty Kern books based on Playset Magazine // worldwide // (marx) (kern) -(karl,bruno) // ihaveitusa,ihaveit_music,ihaveitusa,ihaveit_music,rarewaves-usa,ihaveitusa,ihaveit_music,ihaveitusa,ihaveit_music,rarewaves-usa,rarewaves-europe,ihaveitusa,ihaveit_music,ihaveitusa,ihaveit_music,rarewaves-usa,ihaveitusa,ihaveit_music,ihaveitusa,ihaveit_music,rarewaves-usa,rarewaves-europe,rarewaves,ihaveitusa,ihaveit_music,ihaveitusa,ihaveit_music,rarewaves-usa,ihaveitusa,ihaveit_music,ihaveitusa,ihaveit_music,rarewaves-usa,rarewaves-europe,ihaveitusa,ihaveit_music,ihaveitusa,ihaveit_music,rarewaves-usa,ihaveitusa,ihaveit_music,ihaveitusa,ihaveit_music,rarewaves-usa,rarewaves-europe,rarewaves,rarewaves-ca,newlyolder
-
 
     console.log('Done filling filters.');
 }
@@ -501,5 +507,6 @@ function checkURL()
     {
         _searchID = res[0].replace(/%22/g, "");
         console.log('Search id: ' + _searchID);
+        _doFiltering = true;
     }
 }
