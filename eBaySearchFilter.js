@@ -254,9 +254,9 @@ function fillFilters()
 {
     console.log('Filling filters...');
 
-    var inch456 = ['\\b(6|six)(½)?( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)',
-                   '\\b(5|five)(½)?( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)',
-                   '\\b(4|four)(½)?( 1/4)?( 1/2)?( 3/4)?.?("|”|\'\'|inch)',
+    var inch456 = ['\\b(6|six)(.?½| 1/4| 1/2| 3/4)?.?("|”|\'\'|inch)',
+                   '\\b(5|five)(.?½| 1/4| 1/2| 3/4)?.?("|”|\'\'|inch)',
+                   '\\b(4|four)(.?½| 1/4| 1/2| 3/4)?.?("|”|\'\'|inch)',
                    '(15|14|13|12|11)(\.5)?.?cm'
                    /*
                    '\\b6.?"', '6”', "6''", '6.?inch', 'six inch',
@@ -267,7 +267,7 @@ function fillFilters()
                         ];
 
     // !!! The below contains a supa dupa advanced regex to exclude small sizes ending with 1/4 or 3/4
-    var inch456Exclude = ['crescent', 'payton', 'duck', 'bend', 'Squishmallow', 'drum', '\\bpee', '(doctor|dr) who', 'rescue', 'dime novel', 'taxi', 'leather', 'lanard', '\\bnba\\b', 'bandai', 'motorhead', 'Squeaker', 'zombie', 'Julius Jones', 'plastoy', 'pickles', '\\barco\\b', 'grandex', 'vampire', 'Geronimo', '\\bDC\\b', 'mirror', 'bebo(b|p)', 'space', '\\bryan.*world', 'noodle', 'steel', 'Marvel', 'rhino', 'sticker', 'Indian Jones', '(1|2)\.(5|75)(”|"|\'\'| inch)', '(\\D|1|2)( |-)(1|3)/4("|”)', '1:12', '1/12', '12.5"', '1/144'];
+    var inch456Exclude = ['crescent', 'payton', 'duck', 'bend', 'Squishmallow', 'drum', '\\bpee', '(doctor|dr) who', 'rescue', 'dime novel', 'taxi', 'leather', 'lanard', '\\bnba\\b', 'bandai', 'motorhead', 'Squeaker', 'zombie', 'Julius Jones', 'plastoy', 'pickles', '\\barco\\b', 'grandex', 'vampire', 'Geronimo', '\\bDC\\b', 'mirror', 'bebo(b|p)', 'space', '\\bryan.*world', 'noodle', 'steel', 'Marvel', 'rhino', 'sticker', 'Indian Jones', '(1|2)\.(5|75)(”|"|\'\'| inch)', '(\\D|1|2)( |-)(1|3)/4("|”)', '1:12', '1/12', '12.5"', '28mm', '1/144'];
 
     var commonExcludedSellers = ['gtohall', 'bhall0415', ' alamo3636', 'laparkamania', 'softball-1baseball-2', 'jonsmemorabiliamart64', 'picker_picker', 'oldfartcollections', 'annfrei_12', 'luckynickels', 'griff2299', 'sstoys2', 'kvik_567', 'mirthunder', 'brcli_25', 'kerrlindle0', 'crash29', 'janerose2014', 'softviking', 'tbt', 'davenportpm1', 'leopardlover48', 'www.telecoin.bizland.com', 'infernal_devices', '2rosesathome', 'j_byers_24', 'the\\*village\\*idiot', 'vintagestg', 'littletoymaker', 'realbricks', 'goatsonparade17023', 'alysunwonderland', 'tin-toyman', 'jhsmith400', 'cumberlandborn', 'mediawavepress', 'medienvertriebundverlag'];
     var commonExcludedTerms = ['(Jo(h)?nny|Johhny|Johnty|Johnney|Johnnie|Jane|Jamie|Jimmy|Josie|Jay|Janice) West', 'Sam Cobra', 'Best of (the )?West', 'BOTW', 'Ready Gang', 'movable', 'Legends of (the )?West', 'cherokee', 'Be[bp]op', 'cap.?gun', '\\bw(ind)?.?up\\b', 'ring.?hand', 'pin.?ball', 'jigsaw', 'puzzle', 'Barclay', 'Manoil', 'pl?ay.?mobil', 'play.?skool', 'play.?people', 'Lincoln.*?log', 'friction', 'ajax', '\\bdolls?\\b', 'ram.?p.?walk', 'Bravo', '\\bH(O|0)\\b', 'HO scale', 'Hasbro', '\\bmarble(s)?\\b', 'swirl', 'jabo', 'celluloid', 'harmonica', 'plush', 'navwar', 'giant brand', 'Tonka', 'POST.?CARD', 'swoppet?d?', 'swivel', 'moo mesa', 'marchon', 'little.?people', 'gbpv', 'Popeye', 'Fisc?her.?Price', 'Bonanza', 'clock.?work', '\\bpull.?toy\\b', '\\btin.?plate\\b', 'critter', 'Pullman', 'puppet', 'Mickey Mouse', 'G(\\.)?I(\\.)?.?Joe', 'playschool', 'stuffed', 'motor(cycle|bike)', 'bendable', 'costume', 'hot.?wheels', '\\bLOTR\\b', 'poseable', 'composite', 'composition', '\\bking.?(&)?(and)?.?country\\b', 'John Jenkins', 'Mortal Kombat', 'star.?wars', 'playmate', 'Gabriel', '^(?=.*\\btin\\b)(?=.*litho).*$', 'kinder surprise', 'burger king', 'haribo', 'TMNT', 'ghost', 'teenage mutant ninja turtle', 'toy story', 'matchbox', 'troll', '\\b(glass|cup|mug)', 'jumbo chunky', 'master box', 'mine.?craft', 'lincoln logs', 'jenkins', 'chess', 'Japan', 'coloring book', '3d.?print'];
