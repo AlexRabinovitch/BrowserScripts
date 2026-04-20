@@ -497,7 +497,7 @@ function checkURL()
     console.log('Checking URL...');
     var url = window.location.href;
     console.log('Page URL: ' + url);
-    var regexp = new RegExp(/%22id-\d+%22/, "i");
+    var regexp = new RegExp(/id-\d+/, "i");
     var res = regexp.exec(url);
     if(!res)
     {
