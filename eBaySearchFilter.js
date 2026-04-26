@@ -283,7 +283,7 @@ function fillFilters()
     var commonExcludeCountries = ['China'];
 
     var filter = new Object();
-    filter.searchName = "id-1"; // 4, 5, 6 inch cowboys and indians
+    filter.searchName = "1"; // 4, 5, 6 inch cowboys and indians
     filter.mustTerms = inch456;
     filter.excludeTerms = ['Chap Mei', 'Pail', 'Sesame', 'giraffe', 'clicker', 'donald', 'baby', 'boot', 'subway', 'disney', 'GI Joe', 'my little pony', 'menko', 'cowboy hat', 'Logan', 'Orton', 'Chip Mei', 'Totsy', 'rocking', 'slug', 'NFL', 'Owens', 'chess', 'Posable', 'elephant', 'blanket', 'pocahontas', 'Wolverine', 'McFarlane', 'Skyforce', 'Prescott', 'penguin', 'potato', 'paper mache', 'photo'];
     filter.excludeTerms = filter.excludeTerms.concat(inch456Exclude);
@@ -294,7 +294,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-2"; // 4, 5, 6 inch indians
+    filter.searchName = "2"; // 4, 5, 6 inch indians
     filter.mustTerms = inch456;
     filter.excludeTerms = ['billboard', 'Micro Stars', 'Schleich', 'marchon', 'board game', 'elephant', 'posable'];
     filter.excludeTerms = filter.excludeTerms.concat(inch456Exclude);
@@ -303,7 +303,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-3"; // mounted cowboys and indians
+    filter.searchName = "3"; // mounted cowboys and indians
     filter.excludeTerms = ['Tradition', 'Trophy Miniatures', 'Traditional Models', 'nursery', 'wooden', 'halloween', 'mvp', 'Barclay', 'Manoil', 'Geobra', 'outfit', 'Safari', 'Schleich', 'paddle', 'elephant', 'token', 'Indian army', 'Woody', 'jacket', 'drum', 'child', 'lionel', 'horseshoe', 'folk art', 'mutiny', 'holster', 'board game', '\\btin\\b', 'Star Ace', 'Hopalong', 'country', 'Atkins', 'Bravestar', 'flock', 'legends', 'stencil', 'ducky', 'Peppa pig', 'cowboy hat', 'cowboy boot', 'domino', 'mechanical', 'card', 'yo.?yo', 'W Britain', 'britain\'?s?', 'purse', 'wallet', 'Roll Call', 'velvet', 'blind', 'clip.*?clop', 'stick', 'space', 'Hoefler', 'buckle', 'scarf', 'ponywars', 'frogz', 'roadrider', 'schylling', 'chap mei', 'giant', 'boot hill', 'GMT', 'forged', 'First Legion', 'handcraft', 'canteen', 'Kingcast', 'Frontline Figures', 'douglas', 'sikh', 'minifig', '\\bthreeA|3A\\b', '\\braj\\b', 'beanbag', 'gabriel', 'new.?ray', 'road.?rider', 'cuddle', 'marionette', 'christma', 'littlest', 'tick.?tock', 'rocking', 'farm world', 'monster', 'pendulum', 'weeble', 'michel', 'duck', 'ganz', 'inflatable', 'bucking bulls', 'Rudolph', 'Merten', 'resin', 'ro(bo)?blox', '\\bmtb\\b', 'keystone', '\\belmo', 'delhi', 'durbar', 'Skinner', 'Bengal', 'lancer', 'clothes', 'bouncy', 'curtains', 'lancer', '\\b(4|8|16|21).?pcs\\b', 'Judy Larson', 'skull', 'unimax', 'krolyn', 'RCOMG', 'girls', 'micro', 'pillow', 'nosco', '\\bPapo\\b', '\\bMOJO\\b', 'gripping', 'roper'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(commonIrrelevantSizes);
@@ -315,7 +315,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-4"; // frontiersmen
+    filter.searchName = "4"; // frontiersmen
     filter.excludeTerms = ['\\breel', 'Bushido', 'Action.?Man', 'Action.?Team', '\\blead\\b', 'coin', 'Glass', 'teddy.?bear', 'penguin', 'Corvus', 'Loggers', 'Wargame', 'board', 'Malifaux', 'Ninja', 'Time', 'Bombshell', '\bdnd\b', 'ad&d', 'warhammer', 'Bachmann', 'Citadel', 'Skylander', 'Dakin', '25mm', 'Pok(é|e)mon', 'speed', 'lost world', 'pillow', 'wyrd', 'wallet', '1:6th', 'gloves', 'Mordenkainen', 'Mandalorian', 'benalish', 'duluth', 'demigod', 'resin', 'Kilgore', 'Monsters', 'hell.?dorado', 'baseball', 'belt', 'badge', 'paw patrol', 'ruby', 'gator', 'pulsecon', 'Buddy.?L', 'alien', 'Artisan', 'Bushiroad', 'Greyjoy', 'pocket knife', 'storm.?trooper', 'goliath', '\\bgame\\b', 'vtes', 'Bofuri', 'hand.?made', '\\bdnd\\b', 'robot', 'caldor', 'outfit', 'midnight hunt', 'Warriors.*?Warrens', 'just friends', 'Weiss Schwarz', 'Figma', 'ATDT', 'Kobol', 'truck', '\\bhat\\b', 'Border3d', 'Jurassic', 'dragon trapper', 'Warlord Games', 'nendoroid', 'dbd', 'bear', 'rathi', '\\bdecal(s)?\\b', 'glyos', 'locomotive', 'gnome', 'dirt.?trapper', 'privateer', 'MaxMini', 'gnarl', 'rpg', 'croak', 'soul.?trapper', 'yu.?gi.?oh', 'mirkwood', 'frostgrave', 'dungeons', 'dead( )?by( )?daylight', 'Tainted Grail', 'timpo', 'helmet', 'flyer', 'Madelman', 'pendulum', 'dragonfly', 'alena', 'doomlings', 'gnoblit', 'gnoblar', 'mouse', 'death', 'dauthi', 'dominaria', 'ballynock', 'skulldart', 'geist', 'gavony', 'edh', 'avenant', 'freefolk', 'battalion', 'TCG', 'Kenner', 'Bachman', 'Goofy', '\\belf\\b', 'Lilo.*Stitch', 'lone ranger', 'kentucky long rifle', 'wanderbrine', 'icewind', 'strawberry', 'beanie', 'trapper wolf'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(commonIrrelevantSizes);
@@ -325,7 +325,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-5"; // Marx knights
+    filter.searchName = "5"; // Marx knights
     filter.excludeTerms = ['Gordon', 'Stuart', 'prince Charles', 'Valour', 'moveable', 'diedhoff', 'MPC', '\\bMego\\b', 'armou?red horse', '30cm'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -336,7 +336,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-7"; // Marx cowboys
+    filter.searchName = "7"; // Marx cowboys
     filter.excludeTerms = ['crazy', 'target', 'Buck Rogers', 'lledo', 'cap gun', 'linemar', 'gijoe', 'reamsa', 'jecsan', 'ride.on', 'johnnie'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -347,17 +347,17 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-8"; // Atlantic //atlantic (cowboy,cowboys,outlaw,outlaws,sheriff,sheriffs,west,1214,"1/32") -(soldatini,soldiers,lionel,gulliver,airfix,chess,hasbro,"no atlantic",nardi,german,air,ww,resin,replica,mussolini,forma,3d,wwii,alpine,1/72,ho,h0,"id-8") -(alpino,aviazione,carabiniere,carabinieri,sbarco,fante,marinai,russi) // worldwide // lellina9692010,dracula-brad,andre17,marketoy,collect-world-sarl,lellina9692010,dracula-brad,andre17,marketoy,collect-world-sarl,leonveck,cianciconedue
+    filter.searchName = "8"; // Atlantic //atlantic (cowboy,cowboys,outlaw,outlaws,sheriff,sheriffs,west,1214,"1/32") -(soldatini,soldiers,lionel,gulliver,airfix,chess,hasbro,"no atlantic",nardi,german,air,ww,resin,replica,mussolini,forma,3d,wwii,alpine,1/72,ho,h0,"id-8") -(alpino,aviazione,carabiniere,carabinieri,sbarco,fante,marinai,russi) // worldwide // lellina9692010,dracula-brad,andre17,marketoy,collect-world-sarl,lellina9692010,dracula-brad,andre17,marketoy,collect-world-sarl,leonveck,cianciconedue
     filter.excludeTerms = ['Atlantic Scheme', 'Boeing', 'bombardier', 'carabinieri', 'paratroop', '\\bair.?(force|craft)', 'bersaglieri', 'vespa', 'jeep', 'battalion', 'rocket', 'missile', 'cannon', 'frog', 'truck', 'marine', 'patrol', 'troop', 'sailor', 'lenin', 'fusilier', 'modern', 'infantry', 'military', 'marina', 'aviator', 'decal', '\\bair\\b', '\\bcar(s)?\\b', '\\b1(0|1|5)\\d{2}\\b', '\\b11\\d{3}\\b', '\\b20(0|1|2)\\d{1}\\b'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-9"; // Auburn //worldwide auburn (cowboy,cowboys,indian,indians,frontiersman,frontiersmen,frontier,pioneer,pioneers,horse,horses) -("western models",shoe,shoes,horseshoe,police,farm,"rubber axe","id-9")
+    filter.searchName = "9"; // Auburn //worldwide auburn (cowboy,cowboys,indian,indians,frontiersman,frontiersmen,frontier,pioneer,pioneers,horse,horses) -("western models",shoe,shoes,horseshoe,police,farm,"rubber axe","id-9")
     filter.excludeTerms = ['Kusan', 'hammer', 'motorcycle', 'hatchet'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-10"; // Elastolin
+    filter.searchName = "10"; // Elastolin
     filter.excludeTerms = ['ground', 'composée', 'composit','compo', '\\bmasse?\\b', 'massesoldat', 'masse.?figur', '\\bpaste\\b', '\\bpasta\\b', 'british', 'French', '7th', 'Civil war', 'Zusammensetzung', 'Clairet', 'massebäume', 'elfer raus', 'turk', 'ww1', 'revolution', 'pre war', 'Africa', '1930s', '\\b1940\\b', 'trooper', '\\bcow\\b', '\\bband\\b', 'janestkzi', 'railway', 'reamsa', 'jecsan', '\\bfaro\\b', 'animal', 'giraffe', 'mercenary?(ies)?', 'doughboy', '\\bdeer', '\\bboa\\b', 'tiger', '\\blion', '\\bzoo\\b', '\\bbear\\b', 'monkey', 'ostrich', 'rhino', 'wolf', 'panther', 'zebra', '\\b19[01234]\\d', 'prewar', 'Steckfigur', 'connector', 'socket', 'regiment', 'grenadier', 'lafredo', 'M[aä]rklin', '\\blead\\b', 'ADVERTISING Brands', 'diedhoff', 'quiralu', 'blechräder', 'air france', 'advertising', 'plug', 'nativity', 'ww2', 'wwii', 'Weltkrieg', 'world war', 'mussolini', 'militaria', '\\bWK\\b', 'Kellermann', 'Gama', 'sailor', 'kriegsmarine', '\\btin\\b', '\\btipp?co', 'goering', 'german politician', '44\\d{2}', '4\\d{4}', '\\b549(3|4)\\d{1}', '\\b1(4|6)\\d{3}', '\\b541\\d{2}', '\\b780\\d{1}\\b', '\\b73(3|4|5)\\d{1}\\b', '\\b5(6|7|8)\\d{3}', '5.6cm', '1\\:72', 'CM 4', '\\b1 5\\/8', '\\b1 3\\/4', '1/50', '1.5 Inch', '46.?mm', '38.?mm', '19.?mm', '10.5.?cm'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(excludeTermsElastolin);
@@ -368,14 +368,14 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-11"; // Empire //worldwide //empire (indian,indians,pioneer,pioneers,frontiersmen,frontiersman,1776,frontier) -(magazine,puzzle,rpg,star,citadel,chess,army,hachette,lead,king,north,25mm) -(geronimo,defiance,command,metal,carolina,sikh,15mm,"id-11")
+    filter.searchName = "11"; // Empire //worldwide //empire (indian,indians,pioneer,pioneers,frontiersmen,frontiersman,1776,frontier) -(magazine,puzzle,rpg,star,citadel,chess,army,hachette,lead,king,north,25mm) -(geronimo,defiance,command,metal,carolina,sikh,15mm,"id-11")
     filter.excludeTerms = ['Hachette-marshals', 'Spirit of the Empire', 'Sons of the Empire', 'redcoat', 'empire state', 'Sons of Empire', 'Warhammer', 'fire (dept )?chief', 'Roman empire', 'end of empire', 'british'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['oraff_tm', 'libro_di_faccia'];
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-12"; // Ideal knights // ideal (knight,knights) -(slot,batman,galahad,ingrid,"star team",darkness,tcr,trap,cutoff,"id-12")
+    filter.searchName = "12"; // Ideal knights // ideal (knight,knights) -(slot,batman,galahad,ingrid,"star team",darkness,tcr,trap,cutoff,"id-12")
     filter.excludeTerms = ['ideal stocking', '\\bmetal\\b','ideal for','ideal 4', 'ideal.*gift', 'board game', 'knight rider', '1/62'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeSellers = ['tomson162'];
@@ -383,7 +383,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-13"; // Ideal pirates
+    filter.searchName = "13"; // Ideal pirates
     filter.excludeTerms = ['ideal stocking', 'ideal to match', 'Giggle'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     _filters[filter.searchName] = filter;
@@ -398,7 +398,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-18"; // Marx frontiersmen
+    filter.searchName = "18"; // Marx frontiersmen
     filter.excludeTerms = ['action', 'classic recasts', 'ride.on', '2060'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -408,7 +408,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-19"; // Marx horses
+    filter.searchName = "19"; // Marx horses
     filter.excludeTerms = ['Hartland', '\\btin\\b', '\\bcart\\b', 'action', 'noble', 'moving', 'Gordon', 'MCML', 'gold knight', 'Big Jim', 'General Custer', 'Odin', 'Geronimo', 'viking', 'ride.on', 'pony tail', 'iron horse', 'comanche', 'Destiny', 'palomino', 'pinto', 'cloud', 'railroad', 'rocking', 'MCMXV'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -422,7 +422,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-20"; // Marx Indians
+    filter.searchName = "20"; // Marx Indians
     filter.excludeTerms = ['\\bcar\\b', 'target', 'skate', 'Big Jim', 'Wildflower', 'police', 'whirling', 'Brave Eagle', 'fire (dept )?chief', 'lone ranger'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -434,7 +434,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-22"; // Marx pirates // worldwide // marx (pirate,pirates) -("ramp walker","johnny west","id-22")
+    filter.searchName = "22"; // Marx pirates // worldwide // marx (pirate,pirates) -("ramp walker","johnny west","id-22")
     filter.excludeTerms = ['sailor queen', 'Goldberg', 'American fighter'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -445,7 +445,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-23"; // Marx saddles
+    filter.searchName = "23"; // Marx saddles
     filter.excludeTerms = ['Custer', 'MCMLXVI', 'howdah', '\\bReinhard?t?\\b', 'reinhold', '\\blaig\\b', 'patent'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -459,7 +459,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-24"; // Marx vikings // worldwide // marx (viking,vikings) -(odin,sir,"johnny west","karl marx",cxr,"1/6","12"") -(brave,"erik the viking","eric the viking","id-24"))
+    filter.searchName = "24"; // Marx vikings // worldwide // marx (viking,vikings) -(odin,sir,"johnny west","karl marx",cxr,"1/6","12"") -(brave,"erik the viking","eric the viking","id-24"))
     filter.excludeTerms = ['nodding', 'diedhoff', 'Erik', '11 1/4'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
@@ -470,7 +470,7 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-25"; // Preiser
+    filter.searchName = "25"; // Preiser
     filter.excludeTerms = ['\\b4\\d{4}','10\\d{3}', '\\b5(6|7|8)\\d{3}', '\\b523\\d{2}', '\\b541\\d{2}', '\\b(\\d{1})?30\\d{2}\\b', '\\b5(3|4)\\d{2}\\b', '\\b5475\\d{1}\\b', '\\b73(5|6|8)\\d{1}\\b', '\\b780\\d{1}\\b', '\\b3(7|8|9)\\d{2}\\b', '\\b5(7|8|9)\\d{2}\\b', '\\b67\\d{2}\\b', '\\b73(3|4|5)\\d{1}\\b', '\\bGerman\\b', 'bburago', '^Starlux', 'Feuerwehrmänner', 'les animaux', 'le monde civil', 'creche *de *noel', 'civil world', 'modern army', 'infanterie', 'regiment', 'tedesco', 'Deutscher', 'Master Box', 'grenadiere', '45mm'];
     filter.excludeTerms = filter.excludeTerms.concat(excludeTermsElastolin);
     filter.complexTerms = [];
@@ -497,7 +497,7 @@ function checkURL()
     console.log('Checking URL...');
     var url = window.location.href;
     console.log('Page URL: ' + url);
-    var regexp = new RegExp(/id-\d+/, "i");
+    var regexp = new RegExp(/id(-)?\d+/, "i");
     var res = regexp.exec(url);
     if(!res)
     {
@@ -506,7 +506,7 @@ function checkURL()
     }
     else
     {
-        _searchID = res[0].replace(/%22/g, "");
+        _searchID = res[0].replace(/%22/g, "").replace("id", "").replace("-", "");
         console.log('Search id: ' + _searchID);
         _doFiltering = true;
     }
