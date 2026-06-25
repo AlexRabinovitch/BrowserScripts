@@ -389,8 +389,8 @@ function fillFilters()
     _filters[filter.searchName] = filter;
 
     filter = new Object();
-    filter.searchName = "id-17"; // Marx wagon, buckboard, stagecoach
-    filter.excludeTerms = ['pistol', 'dairy', 'Bonnie-Bilt', 'derringer', 'steamer', 'oo gauge', '\\bcar\\b', 'truck', 'caboose', 'tender', 'pressed steel', 'hot rod', 'tractor'];
+    filter.searchName = "17"; // Marx wagon, buckboard, stagecoach
+    filter.excludeTerms = ['pistol', 'dairy', 'Bonnie-Bilt', 'derringer', 'steamer', 'oo gauge', '\\bcar\\b', 'truck', 'caboose', 'tender', 'pressed steel', 'hot rod', 'tractor', 'comet', 'rapid express'];
     filter.excludeTerms = filter.excludeTerms.concat(commonExcludedTerms);
     filter.excludeTerms = filter.excludeTerms.concat(marxExcludedTerms);
     filter.excludeSellers = ['fyrtoyboy', 'ceosis', 'fabboss7'];
