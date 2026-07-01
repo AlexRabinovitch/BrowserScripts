@@ -44,7 +44,7 @@ new MutationObserver(function(mutations)
         for (var j = 0; j < mutationAddedNodes.length; j++)
         {
             var node = mutationAddedNodes[j];
-            if (node.tagName && node.tagName.toUpperCase() == "LI" && node.classList && (node.classList.contains("s-item") || node.classList.contains("su-card-container") || node.classList.contains("s-card--horizontal")))
+            if (node.tagName && node.tagName.toUpperCase() == "LI" && node.classList && (node.classList.contains("s-item") || node.classList.contains("su-card-container") || node.classList.contains("s-card--horizontal") || node.classList.contains("su-grid__item")))
             {
                 console.log('Node found');
                 processNode(node, filter);
@@ -65,7 +65,7 @@ document.onreadystatechange = () =>
         if(filter == null)
             return;
 
-        var nodes = document.querySelectorAll('li.s-item.s-item__pl-on-bottom, li.su-card-container.su-card-container--horizontal, li.s-card.s-card--horizontal');
+        var nodes = document.querySelectorAll('li.s-item.s-item__pl-on-bottom, li.su-card-container.su-card-container--horizontal, li.s-card.s-card--horizontal, li.su-grid__item');
 
         console.log('Nodes found: ' + nodes.length);
 
@@ -110,7 +110,8 @@ function getFilter(observer)
 
 function processNode(node, filter)
 {
-    var titles = node.querySelectorAll('div.s-item__title, span.su-styled-text.primary.default');
+    //var titles = node.querySelectorAll('div.s-item__title, span.su-styled-text.primary.default');
+    var titles = node.querySelectorAll('span.su-styled-text.default.clamped');
     var title = '';
     if(titles && titles.length > 0)
     {
