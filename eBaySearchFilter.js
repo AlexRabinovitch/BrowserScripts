@@ -199,17 +199,17 @@ function processComplexTerms(filter, node, title)
 
 function processSellers(filter, node)
 {
-    return processNonTitleItems(filter.excludeSellers, node, 'span.s-item__seller-info, span.su-styled-text.secondary.large, span.su-styled-text.primary.large', 'Seller');
+    return processNonTitleItems(filter.excludeSellers, node, 'span.s-item__seller-info, span.su-styled-text', 'Seller');
 }
 
 function processCountries(filter, node)
 {
-    return processNonTitleItems(filter.excludeCountries, node, 'span.s-item__location.s-item__itemLocation, span.su-styled-text.secondary.large', 'Country');
+    return processNonTitleItems(filter.excludeCountries, node, 'span.s-item__location.s-item__itemLocation, span.su-styled-text', 'Country');
 }
 
 function processItemIDs(filter, node)
 {
-    return processNonTitleItems(filter.excludeItemIDs, node, 'span.s-item__item-id.s-item__itemID, span.su-styled-text.secondary.large', 'ItemID');
+    return processNonTitleItems(filter.excludeItemIDs, node, 'span.s-item__item-id.s-item__itemID, span.su-styled-text', 'ItemID');
 }
 
 function processNonTitleItems(itemFilter, node, selector, itemName)
