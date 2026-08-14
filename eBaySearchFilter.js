@@ -111,8 +111,10 @@ function getFilter(observer)
 function processNode(node, filter)
 {
     //var titles = node.querySelectorAll('div.s-item__title, span.su-styled-text.primary.default');
-    var titles = node.querySelectorAll('span.su-styled-text.default.clamped');
+    //var titles = node.querySelectorAll('span.su-styled-text.default.clamped');
+    var titles = node.querySelectorAll('span.su-styled-text.primary.default');
     var title = '';
+
     if(titles && titles.length > 0)
     {
         title = titles[0].textContent;//innerText;
@@ -199,17 +201,17 @@ function processComplexTerms(filter, node, title)
 
 function processSellers(filter, node)
 {
-    return processNonTitleItems(filter.excludeSellers, node, 'span.s-item__seller-info, span.su-styled-text', 'Seller');
+    return processNonTitleItems(filter.excludeSellers, node, 'span.su-styled-text.primary.large, span.su-styled-text.default', 'Seller');
 }
 
 function processCountries(filter, node)
 {
-    return processNonTitleItems(filter.excludeCountries, node, 'span.s-item__location.s-item__itemLocation, span.su-styled-text', 'Country');
+    return processNonTitleItems(filter.excludeCountries, node, 'span.su-styled-text.secondary.large', 'Country');
 }
 
 function processItemIDs(filter, node)
 {
-    return processNonTitleItems(filter.excludeItemIDs, node, 'span.s-item__item-id.s-item__itemID, span.su-styled-text', 'ItemID');
+    return processNonTitleItems(filter.excludeItemIDs, node, 'span.su-styled-text.secondary.large', 'ItemID');
 }
 
 function processNonTitleItems(itemFilter, node, selector, itemName)
@@ -270,7 +272,7 @@ function fillFilters()
     // !!! The below contains a supa dupa advanced regex to exclude small sizes ending with 1/4 or 3/4
     var inch456Exclude = ['crescent', 'payton', 'duck', 'bend', 'Squishmallow', 'drum', '\\bpee', '(doctor|dr) who', 'rescue', 'dime novel', 'taxi', 'leather', 'lanard', '\\bnba\\b', 'bandai', 'motorhead', 'Squeaker', 'zombie', 'Julius Jones', 'plastoy', 'pickles', '\\barco\\b', 'grandex', 'vampire', 'Geronimo', '\\bDC\\b', 'mirror', 'bebo(b|p)', 'space', '\\bryan.*world', 'noodle', 'steel', 'Marvel', 'rhino', 'sticker', 'Indian Jones', 'Diwali', 'ajuny', 'galaxy', '(1|2)\.(5|75)(”|"|\'\'| inch)', '(\\D|1|2)( |-)(1|3)/4("|”)', '1:12', '1/12', '12.5"', '28mm', '1/144'];
 
-    var commonExcludedSellers = ['gtohall', 'bhall0415', ' alamo3636', 'laparkamania', 'softball-1baseball-2', 'jonsmemorabiliamart64', 'picker_picker', 'oldfartcollections', 'annfrei_12', 'luckynickels', 'griff2299', 'sstoys2', 'kvik_567', 'mirthunder', 'brcli_25', 'kerrlindle0', 'crash29', 'janerose2014', 'softviking', 'tbt', 'davenportpm1', 'leopardlover48', 'www.telecoin.bizland.com', 'infernal_devices', '2rosesathome', 'j_byers_24', 'the\\*village\\*idiot', 'vintagestg', 'littletoymaker', 'realbricks', 'goatsonparade17023', 'alysunwonderland', 'tin-toyman', 'jhsmith400', 'cumberlandborn', 'mediawavepress', 'medienvertriebundverlag', 'hustlebustleandrustle'];
+    var commonExcludedSellers = ['gtohall', 'bhall0415', ' alamo3636', 'laparkamania', 'softball-1baseball-2', 'jonsmemorabiliamart64', 'picker_picker', 'oldfartcollections', 'annfrei_12', 'luckynickels', 'griff2299', 'sstoys2', 'kvik_567', 'mirthunder', 'brcli_25', 'kerrlindle0', 'crash29', 'janerose2014', 'softviking', 'tbt', 'davenportpm1', 'leopardlover48', 'www.telecoin.bizland.com', 'infernal_devices', '2rosesathome', 'j_byers_24', 'the\\*village\\*idiot', 'vintagestg', 'littletoymaker', 'realbricks', 'goatsonparade17023', 'alysunwonderland', 'tin-toyman', 'jhsmith400', 'cumberlandborn', 'mediawavepress', 'medienvertriebundverlag', 'hustlebustleandrustle', 'mee_1767'];
     var commonExcludedTerms = ['(Jo(h)?nny|Johhny|Johnty|Johnney|Johnnie|Jane|Jamie|Jimmy|Josie|Jay|Janice).?West', 'Sam Cobra', 'Best of (the )?West', 'BOTW', 'Ready Gang', 'movable', 'Legends of (the )?West', 'cherokee', 'Be[bp]op', 'cap.?gun', '\\bw(ind)?.?up\\b', 'ring.?hand', 'pin.?ball', 'jigsaw', 'puzzle', 'Barclay', 'Manoil', 'pl?ay.?mobil', 'play.?skool', 'play.?people', 'Lincoln.*?log', 'friction', 'ajax', '\\bdolls?\\b', 'ram.?p.?walk', 'Bravo', '\\bH(O|0)\\b', 'HO scale', 'Hasbro', '\\bmarble(s)?\\b', 'swirl', 'jabo', 'celluloid', 'harmonica', 'plush', 'navwar', 'giant brand', 'Tonka', 'POST.?CARD', 'swoppet?d?', 'swivel', 'moo mesa', 'marchon', 'little.?people', 'gbpv', 'Popeye', 'Fisc?her.?Price', 'Bonanza', 'clock.?work', '\\bpull.?toy\\b', '\\btin.?plate\\b', 'critter', 'Pullman', 'puppet', 'Mickey Mouse', 'G(\\.)?I(\\.)?.?Joe', 'playschool', 'stuffed', 'motor(cycle|bike)', 'bendable', 'costume', 'hot.?wheels', '\\bLOTR\\b', 'poseable', 'composite', 'composition', '\\bking.?(&)?(and)?.?country\\b', 'John Jenkins', 'Mortal Kombat', 'star.?wars', 'playmate', 'Gabriel', '^(?=.*\\btin\\b)(?=.*litho).*$', 'kinder surprise', 'burger king', 'haribo', 'TMNT', 'ghost', 'teenage mutant ninja turtle', 'toy story', 'matchbox', 'troll', '\\b(glass|cup|mug)', 'jumbo chunky', 'master?.box', 'mine.?craft', 'lincoln logs', 'jenkins', 'chess', 'Japan', 'coloring book', '3d.?print', 'sesame', 'ride.?on', 'sand pail', 'cake topper'];
     var commonIrrelevantSizes = ['1(/|:)(48|72|76|87)', '(15|20|25|28|30|32|35|40).?mm', '\\b1"', '1 5/8', '(7.5|8|9|10|12|13)(”|"| inch)', '1/6', '1:6'];
 
