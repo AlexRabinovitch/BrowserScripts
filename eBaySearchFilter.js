@@ -325,7 +325,7 @@ function fillFilters()
     filter.excludeTerms = filter.excludeTerms.concat(commonIrrelevantSizes);
     filter.excludeTerms = filter.excludeTerms.concat(excludeCardsRelated);
     filter.excludeItemIDs = [184583432373, 124617729318];
-    filter.excludeSellers = ['gotakola', 'dayspringdays', 'rpols6', 'unlimited_hk_llc', 'justkidsnostalgia', 'rinnys_boutique', 'scarlettosnow', 'koolman44', 'the-kojima-japaneseshop', 'dollyscards', 'dressupgirl', 'anita.colem', 'dungeonartifacts', 'semperfifirearms', 'amiel_store10'];
+    filter.excludeSellers = ['gotakola', 'dayspringdays', 'rpols6', 'unlimited_hk_llc', 'justkidsnostalgia', 'rinnys_boutique', 'scarlettosnow', 'koolman44', 'the-kojima-japaneseshop', 'dollyscards', 'dressupgirl', 'anita.colem', 'dungeonartifacts', 'semperfifirearms', 'amiel_store10', 'semperfi_fishing'];
     filter.excludeSellers = filter.excludeSellers.concat(commonExcludedSellers);
     _filters[filter.searchName] = filter;
 
